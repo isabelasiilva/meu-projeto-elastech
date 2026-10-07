@@ -1,9 +1,11 @@
 package org.example.aula11_listaRevisao04Out;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // Exercícios variáveis
-        System.out.println("----------- Exercícios variáveis -----------");
+        System.out.println("----------- 1- Exercícios variáveis -----------");
         System.out.println("Nome: " + Variaveis.nome);
         System.out.println("Idade: " + Variaveis.idade);
         System.out.println("Altura: " + Variaveis.altura);
@@ -31,7 +33,7 @@ public class Main {
 
 
         // Exercícios operadores
-        System.out.println("----------- Exercícios operadores -----------");
+        System.out.println("----------- 2- Exercícios operadores -----------");
         System.out.println(Operadores.soma(Operadores.a,Operadores.b));
         System.out.println(Operadores.subtracao(Operadores.a,Operadores.b));
         System.out.println(Operadores.multiplicacao(Operadores.a,Operadores.b));
@@ -65,7 +67,7 @@ public class Main {
 
 
         // Exercícios concatenação
-        System.out.println("----------- Exercícios concatenação -----------");
+        System.out.println("----------- 3- Exercícios concatenação -----------");
         System.out.println(Concatenacao.nome + " tem " + Concatenacao.idade + " anos.");
 
         System.out.printf("A media das notas %.2f e %.2f é %.2f \n", Concatenacao.nota1, Concatenacao.nota2, Concatenacao.media);
@@ -92,6 +94,54 @@ public class Main {
         System.out.println(Concatenacao.total2);
 
         // Exercícios Scanner
-        System.out.println("----------- Exercícios Scanner -----------");
+        System.out.println("----------- 4- Exercícios Scanner -----------");
+        Scanner sc = new Scanner(System.in);
+
+//        System.out.println("Digite seu nome:");
+//        Scanear.nome =  sc.nextLine();
+//        Scanear.mensagemOla(Scanear.nome);
+//
+//        System.out.println("Digite sua idade:");
+//        Scanear.idade =  sc.nextInt();
+//        Scanear.mensagemIdade(Scanear.idade);
+//
+//        System.out.println("Digite um número:");
+//        Scanear.numero1 =  sc.nextInt();
+//        System.out.println("Digite outro número:");
+//        Scanear.numero2 =  sc.nextInt();
+//        Scanear.soma(Scanear.numero1, Scanear.numero2);
+
+//        System.out.println("Qual sua altura? Use ',' (vírgula) ao inves de '.' (ponto)");
+//        Scanear.altura = sc.nextDouble();
+//        System.out.println("Qual seu peso? Use ',' (vírgula) ao inves de '.' (ponto)");
+//        Scanear.peso = sc.nextDouble();
+//
+//        System.out.println("Sua altura é " +  Scanear.altura + " e seu peso é " +  Scanear.peso);
+//
+//        System.out.println("Digite sua idade: ");
+//        Scanear.idade = sc.nextInt();
+//        sc.nextLine(); // Consome o '\n' que ficou pendente no buffer
+//
+//        System.out.println("Digite seu nome: ");
+//        Scanear.nome = sc.nextLine();
+//
+//        System.out.println("Digite sua cidade: ");
+//        Scanear.cidade = sc.nextLine();
+//
+//        Scanear.saudacao(Scanear.idade,  Scanear.nome, Scanear.cidade);
+
+
+        // Exercícios Condicionais
+        System.out.println("----------- 5- Exercícios Condicionais -----------");
+//        Condicionais.perguntarIdade();
+//        Condicionais.perguntarNumero();
+//        Condicionais.perguntarNumeros();
+//        Condicionais.perguntarNota();
+//        Condicionais.mostrarMenuSorveteria();
+//        Condicionais.perguntarIdade2();
+//        Condicionais.perguntarLadosTriangulo();
+
+        // Exercícios Loops
+        System.out.println("----------- 6- Exercícios Loops -----------");
     }
 }

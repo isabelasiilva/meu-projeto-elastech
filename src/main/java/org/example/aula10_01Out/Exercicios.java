@@ -16,7 +16,7 @@ public class Exercicios {
             int divisao = numero1 / numero2;
             System.out.println(divisao);
         } catch (ArithmeticException ae) {
-            System.out.println("Não dá pra dividir por zero! Tente novamente.");
+            System.out.println("Erro: não dá pra dividir por zero! Tente novamente.");
         }
 
 
@@ -28,7 +28,7 @@ public class Exercicios {
             int posicao = sc.nextInt();
             System.out.println(notas[posicao]);
         } catch (ArrayIndexOutOfBoundsException aioobe) {
-            System.out.println("Não existe essa posição, escolha entre 0 e 4!");
+            System.out.println("Erro: não existe essa posição, escolha entre 0 e 4!");
         }
 
 
@@ -38,7 +38,7 @@ public class Exercicios {
             int idade = sc.nextInt();
             System.out.println("Sua idade é " + idade);
         } catch(InputMismatchException ime){
-            System.out.println("Só aceitamos números inteiros para idade");
+            System.out.println("Erro: só aceitamos números inteiros para idade");
         }
 
 
@@ -47,7 +47,7 @@ public class Exercicios {
         try {
             System.out.println(nome.length());
         }catch (NullPointerException npe) {
-            System.out.println("O nome não foi preenchido.");
+            System.out.println("Erro: o nome não foi preenchido.");
         }
 
 
@@ -58,7 +58,7 @@ public class Exercicios {
             int n = sc.nextInt();
             System.out.println("O resto da divisão por 100 = " + (100 % n));
         } catch (ArithmeticException ae) {
-            System.out.println("Não dá pra dividir por zero! Tente novamente");
+            System.out.println("Erro: não dá pra dividir por zero! Tente novamente");
         }
 
         System.out.println("Exercício 6:");
@@ -69,7 +69,7 @@ public class Exercicios {
             int opcaoNumero = 5;
             System.out.println(nomes[opcaoNumero]);
         }catch (ArrayIndexOutOfBoundsException aioobe) {
-            System.out.println("Essa posição não existe.");
+            System.out.println("Erro: essa posição não existe.");
         }finally {
             System.out.println("O programa continua funcionando.");
         }

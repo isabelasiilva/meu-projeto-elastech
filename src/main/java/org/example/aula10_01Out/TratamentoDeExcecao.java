@@ -8,7 +8,7 @@ public class TratamentoDeExcecao {
             System.out.println(resultado);
 
         } catch (ArithmeticException e) {
-            System.out.println("Não dá pra dividir por zero!");
+            System.out.println("Erro: não dá pra dividir por zero!");
 
         } finally {
             System.out.println("Isso sempre roda.");

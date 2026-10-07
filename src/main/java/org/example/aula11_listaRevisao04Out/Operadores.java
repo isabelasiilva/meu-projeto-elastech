@@ -17,7 +17,7 @@ public class Operadores {
         try {
             return "O resultado da divisão é " + (a / b);
         } catch (ArithmeticException e) {
-            return "Não dividimos por 0";
+            return "Erro: não dividimos por 0";
         }
     }
 
@@ -27,13 +27,36 @@ public class Operadores {
 
     static int a = 15;
     static int b = 4;
+
     static int saldo = 1000;
 
     static int idade = 20;
     static boolean temCarteira = true;
-    static int numero = 30;
-    static double arroz = 5.50;
-    static int numero1 = 12;
 
-    static String resultado = numero1 % 3 ==0 && numero1 % 5 == 0 ? "É divisivel por 3 e 5" : "Não é divisivel por 3 e 5 ao mesmo tempo";
+    public static void verificadorHabilitacao(int idadePessoa, boolean temHabilitacao){
+        if (Operadores.idade >=18 && Operadores.temCarteira) {
+            System.out.println("A pessoa é maior de 18 anos e tem carteira de motorista");
+        } else {
+            System.out.println("A pessoa não tem 18 anos ou não possui carteira de motorista");
+        }
+    }
+
+    static int numero = 30;
+
+    public static void verificaDivisaoPor2(int num){
+        System.out.println("Resto da divisão de " + num + " por 2 = " + (num % 2));
+    }
+
+    static double arroz = 5.50;
+
+    public static void totalCompraArroz(double num){
+        System.out.println("\nA compra de 3 arroz é R$" + (num*3));
+    }
+
+    static int numero1 = 12;
+    public static void verificaDivisaoPor3e5(int num){
+        System.out.println("\nEsse número é divisível por 3 e por 5 ao mesmo tempo?");
+        String resultado = numero1 % 3 ==0 && numero1 % 5 == 0 ? "É divisivel por 3 e 5" : "Não é divisivel por 3 e 5 ao mesmo tempo";
+        System.out.println(resultado);
+    }
 }

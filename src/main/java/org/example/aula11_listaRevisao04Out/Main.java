@@ -5,130 +5,73 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Exercícios variáveis
-        System.out.println("----------- 1- Exercícios variáveis -----------");
-        System.out.println("Nome: " + Variaveis.nome);
-        System.out.println("Idade: " + Variaveis.idade);
-        System.out.println("Altura: " + Variaveis.altura);
-
-        System.out.println("Eu moro em " + Variaveis.cidade);
-
-        System.out.println("Nome completo: " + Variaveis.primeiroNome + " " + Variaveis.sobrenome);
-
-        System.out.println("O valor do boné é R$" + Variaveis.preco);
-
-        if (Variaveis.temCarteira == true) {
-            System.out.println("Tem carteira");
-        } else {
-            System.out.println("Não tem carteira");
-        }
-
-        System.out.println("Desafio variáveis");
-
-        System.out.println("a = " + Variaveis.a + ", b = " + Variaveis.b);
-        int c = Variaveis.b;
-
-        Variaveis.b = Variaveis.a;
-        Variaveis.a = c;
-        System.out.println("a = " + Variaveis.a + ", b = " + Variaveis.b);
+//        System.out.println("----------- 1- Exercícios variáveis -----------");
+//        Variaveis.imprimirPessoa(Variaveis.nome);
+//        Variaveis.imprimirPessoa(Variaveis.idade);
+//        Variaveis.imprimirPessoa(Variaveis.altura);
+//        Variaveis.imprimirPessoa(Variaveis.jaProgramou);
+//        Variaveis.imprimirCidade(Variaveis.cidade);
+//        Variaveis.imprimirNomeCompleto(Variaveis.nome, Variaveis.sobrenome);
+//        Variaveis.imprimirPreco(Variaveis.preco);
+//        Variaveis.imprimirTemHabilitacao(Variaveis.temCarteira);
+//
+//        System.out.println("Desafio variáveis");
+//        Variaveis.trocarValorDeB();
 
 
         // Exercícios operadores
-        System.out.println("----------- 2- Exercícios operadores -----------");
-        System.out.println(Operadores.soma(Operadores.a,Operadores.b));
-        System.out.println(Operadores.subtracao(Operadores.a,Operadores.b));
-        System.out.println(Operadores.multiplicacao(Operadores.a,Operadores.b));
-        System.out.println(Operadores.divisao(Operadores.a,Operadores.b));
-        System.out.println(Operadores.resto(Operadores.a,Operadores.b));
+//        System.out.println("----------- 2- Exercícios operadores -----------");
+//        System.out.println(Operadores.soma(Operadores.a,Operadores.b));
+//        System.out.println(Operadores.subtracao(Operadores.a,Operadores.b));
+//        System.out.println(Operadores.multiplicacao(Operadores.a,Operadores.b));
+//        System.out.println(Operadores.divisao(Operadores.a,Operadores.b));
+//        System.out.println(Operadores.resto(Operadores.a,Operadores.b));
+//
+//        Operadores.saldo +=250;
+//        System.out.println("Saldo + 250 = " + Operadores.saldo);
+//        Operadores.saldo -=380;
+//        System.out.println("Saldo - 380 = " + Operadores.saldo);
 
-        Operadores.saldo +=250;
-        System.out.println("Saldo + 250 = " + Operadores.saldo);
-        Operadores.saldo -=380;
-        System.out.println("Saldo - 380 = " + Operadores.saldo);
+//        Operadores.a = 10;
+//        Operadores.b = 10;
+//        System.out.println("a==b = " + (Operadores.a==Operadores.b));
+//        System.out.println("a!=b = " + (Operadores.a!=Operadores.b));
+//        System.out.println("a>b = " + (Operadores.a>Operadores.b));
+//        System.out.println("a>=b = " + (Operadores.a>=Operadores.b));
 
-        Operadores.a = 10;
-        Operadores.b = 10;
-        System.out.println("a==b = " + (Operadores.a==Operadores.b));
-        System.out.println("a!=b = " + (Operadores.a!=Operadores.b));
-        System.out.println("a>b = " + (Operadores.a>Operadores.b));
-        System.out.println("a>=b = " + (Operadores.a>=Operadores.b));
+//        Operadores.verificadorHabilitacao(Operadores.idade, Operadores.temCarteira);
 
-        if (Operadores.idade >=18 && Operadores.temCarteira) {
-            System.out.println("A pessoa é maior de 18 anos e tem carteira de motorista");
-        } else {
-            System.out.println("A pessoa não tem 18 anos ou não possui carteira de motorista");
-        }
-
-        System.out.println("Resto da divisão de " + Operadores.numero + " por 2 = " + (Operadores.numero % 2));
-
-        System.out.println("\nA compra de 3 arroz é R$" + (Operadores.arroz*3));
-
-        System.out.println("\nEsse número é divisível por 3 e por 5 ao mesmo tempo?");
-        System.out.println(Operadores.resultado);
+//        Operadores.verificaDivisaoPor2(Operadores.numero);
+//        Operadores.totalCompraArroz(Operadores.arroz);
+//        Operadores.verificaDivisaoPor3e5(Operadores.numero1);
 
 
         // Exercícios concatenação
         System.out.println("----------- 3- Exercícios concatenação -----------");
-        System.out.println(Concatenacao.nome + " tem " + Concatenacao.idade + " anos.");
+//        Concatenacao.apresentarPessoa(Concatenacao.nome, Concatenacao.idade);
+//        Concatenacao.calcularMediaNotas(Concatenacao.nota1, Concatenacao.nota2);
+//        Concatenacao.apresentarProduto(Concatenacao.preco);
+//        Concatenacao.apresentarPessoa2(Concatenacao.nome, Concatenacao.idade, Concatenacao.altura);
+//        Concatenacao.imprimirRecibo(Concatenacao.produto1, Concatenacao.produto2, Concatenacao.produto3, Concatenacao.preco1, Concatenacao.preco2, Concatenacao.preco3);
+//
+//        System.out.println(Concatenacao.total2);
+//        Concatenacao.total2 += Concatenacao.preco1;
+//        System.out.println(Concatenacao.total2);
+//
+//        Concatenacao.total2 += Concatenacao.preco2;
+//        System.out.println(Concatenacao.total2);
+//
+//        Concatenacao.total2 += Concatenacao.preco3;
+//        System.out.println(Concatenacao.total2);
 
-        System.out.printf("A media das notas %.2f e %.2f é %.2f \n", Concatenacao.nota1, Concatenacao.nota2, Concatenacao.media);
-
-        System.out.printf("O valor é R$ %.2f \n", Concatenacao.preco);
-
-        System.out.printf("Meu nome é %s, tenho %d, e %.1f de altura \n",  Concatenacao.nome, Concatenacao.idade, Concatenacao.altura);
-
-        System.out.println("----Recibo---");
-        System.out.printf("Produto: %s / Valor R$ %.2f", Concatenacao.produto1, Concatenacao.preco1);
-        System.out.printf("Produto: %s / Valor R$ %.2f", Concatenacao.produto2, Concatenacao.preco2);
-        System.out.printf("Produto: %s / Valor R$ %.2f", Concatenacao.produto3, Concatenacao.preco3);
-        System.out.printf("---Total: R$ %.2f---", Concatenacao.total);
-
-        System.out.println(Concatenacao.total2);
-
-        Concatenacao.total2 += Concatenacao.preco1;
-        System.out.println(Concatenacao.total2);
-
-        Concatenacao.total2 += Concatenacao.preco2;
-        System.out.println(Concatenacao.total2);
-
-        Concatenacao.total2 += Concatenacao.preco3;
-        System.out.println(Concatenacao.total2);
 
         // Exercícios Scanner
         System.out.println("----------- 4- Exercícios Scanner -----------");
-        Scanner sc = new Scanner(System.in);
-
-//        System.out.println("Digite seu nome:");
-//        Scanear.nome =  sc.nextLine();
-//        Scanear.mensagemOla(Scanear.nome);
-//
-//        System.out.println("Digite sua idade:");
-//        Scanear.idade =  sc.nextInt();
-//        Scanear.mensagemIdade(Scanear.idade);
-//
-//        System.out.println("Digite um número:");
-//        Scanear.numero1 =  sc.nextInt();
-//        System.out.println("Digite outro número:");
-//        Scanear.numero2 =  sc.nextInt();
-//        Scanear.soma(Scanear.numero1, Scanear.numero2);
-
-//        System.out.println("Qual sua altura? Use ',' (vírgula) ao inves de '.' (ponto)");
-//        Scanear.altura = sc.nextDouble();
-//        System.out.println("Qual seu peso? Use ',' (vírgula) ao inves de '.' (ponto)");
-//        Scanear.peso = sc.nextDouble();
-//
-//        System.out.println("Sua altura é " +  Scanear.altura + " e seu peso é " +  Scanear.peso);
-//
-//        System.out.println("Digite sua idade: ");
-//        Scanear.idade = sc.nextInt();
-//        sc.nextLine(); // Consome o '\n' que ficou pendente no buffer
-//
-//        System.out.println("Digite seu nome: ");
-//        Scanear.nome = sc.nextLine();
-//
-//        System.out.println("Digite sua cidade: ");
-//        Scanear.cidade = sc.nextLine();
-//
-//        Scanear.saudacao(Scanear.idade,  Scanear.nome, Scanear.cidade);
+//        Scanear.perguntarNome();
+//        Scanear.perguntarIdade();
+//        Scanear.perguntarNumeros();
+//        Scanear.perguntarAlturaPeso();
+//        Scanear.perguntarIdadeNomeCidade();
 
 
         // Exercícios Condicionais
@@ -143,5 +86,16 @@ public class Main {
 
         // Exercícios Loops
         System.out.println("----------- 6- Exercícios Loops -----------");
+//        Loops.imprimirNumeros();
+//        Loops.imprimirNumerosRegressivos();
+//        Loops.pedirNumeroTabuada();
+//        Loops.imprimirNumerosPares();
+//        Loops.somaNumerosAte100();
+//        Loops.somaNumerosAte100While();
+//        Loops.iniciarJogo();
+//        Loops.perguntaAsteriscos();
+
+        // Exercícios Arrays
+        System.out.println("----------- 7- Exercícios Arrays -----------");
     }
 }

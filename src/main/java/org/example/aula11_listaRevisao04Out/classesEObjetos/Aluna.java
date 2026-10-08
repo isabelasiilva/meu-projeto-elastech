@@ -1,4 +1,4 @@
-package org.example.aula11_listaRevisao04Out;
+package org.example.aula11_listaRevisao04Out.classesEObjetos;
 
 public class Aluna {
     String nome;

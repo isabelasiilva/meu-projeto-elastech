@@ -1,6 +1,9 @@
 package org.example.aula11_listaRevisao04Out;
 
-import java.util.Scanner;
+import org.example.aula11_listaRevisao04Out.classesEObjetos.Aluna;
+import org.example.aula11_listaRevisao04Out.classesEObjetos.Jogadora;
+import org.example.aula11_listaRevisao04Out.classesEObjetos.Pet;
+import org.example.aula11_listaRevisao04Out.classesEObjetos.Produto;
 
 public class Main {
     public static void main(String[] args) {

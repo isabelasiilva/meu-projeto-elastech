@@ -13,9 +13,9 @@ public class Lanche {
 
         if (precoLanche > 30){
             double aplicarDesconto = precoLanche - 5;
-            System.out.printf("Seu lanche é %s e o valor dele com desconto é %.2f", nomeLanche, aplicarDesconto);
+            System.out.printf("Seu lanche é %s e o valor dele com desconto é %.2f \n", nomeLanche, aplicarDesconto);
         } else {
-            System.out.printf("Seu lanche é %s e o valor dele é %.2f", nomeLanche, precoLanche);
+            System.out.printf("Seu lanche é %s e o valor dele é %.2f \n", nomeLanche, precoLanche);
         }
 
     }

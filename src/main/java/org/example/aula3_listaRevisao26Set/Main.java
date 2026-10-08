@@ -29,9 +29,9 @@ public class Main {
 //            produto.precoProduto = sc.nextDouble();
 //
 //            if (produto.precoProduto > 100) {
-//                System.out.printf("Produto caro! Valor digitado %.2f", produto.precoProduto);
+//                System.out.printf("Produto caro! Valor digitado %.2f \n", produto.precoProduto);
 //            } else {
-//                System.out.printf("Produto com preço acessível! %.2f", produto.precoProduto);
+//                System.out.printf("Produto com preço acessível! %.2f \n", produto.precoProduto);
 //            }
 //        }
 

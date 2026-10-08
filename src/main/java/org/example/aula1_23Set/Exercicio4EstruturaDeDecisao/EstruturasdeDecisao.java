@@ -43,6 +43,6 @@ public class EstruturasdeDecisao {
         } else {
             System.out.println("Reprovada");
         }
-        System.out.printf("Sua nota 1 é %.2f, sua nota 2 é %.2f, sua nota 3 é %.2f, e sua média é %.2f", nota1, nota2, nota3, media);
+        System.out.printf("Sua nota 1 é %.2f, sua nota 2 é %.2f, sua nota 3 é %.2f, e sua média é %.2f \n", nota1, nota2, nota3, media);
     }
 }

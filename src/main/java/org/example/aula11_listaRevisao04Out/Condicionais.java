@@ -1,36 +1,8 @@
 package org.example.aula11_listaRevisao04Out;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Condicionais {
-    static int idade;
-    static int numero;
-    static int numero2;
-    static int nota;
-    static int ladoTriangulo1;
-    static int ladoTriangulo2;
-    static int ladoTriangulo3;
-
-    static Scanner sc = new Scanner(System.in);
-
-    public static void perguntarIdade(){
-        boolean entradaValidaIdade = false;
-        do {
-            System.out.println("Digite sua idade:");
-            try {
-                Condicionais.idade =  sc.nextInt();
-                if(Condicionais.idade >= 0 && Condicionais.idade <= 100){
-                    entradaValidaIdade = true;
-                    Condicionais.verificaIdade(Condicionais.idade);
-                } else {
-                    System.out.println("Só são aceitos números de 0 a 100");
-                }
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: são aceitos somente números de 0 a 100");
-                sc.next();
-            }
-        } while (!entradaValidaIdade);
+    public static void perguntarIdade(LeitorEntrada entrada){
+        verificaIdade(entrada.lerInteiro("Digite sua idade:", 0, 100));
     }
 
     private static void verificaIdade(int idadePessoa){
@@ -41,58 +13,26 @@ public class Condicionais {
         }
     }
 
-    public static void perguntarNumero(){
-        boolean entradaValidaNumero = false;
-        do {
-            System.out.println("Digite um número:");
-            try {
-                Condicionais.numero =  sc.nextInt();
-                verificaNumero(Condicionais.numero);
-                entradaValidaNumero = true;
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: só são aceitos números inteiros");
-                sc.next();
-            }
-        } while (!entradaValidaNumero);
+    public static void perguntarNumero(LeitorEntrada entrada){
+        verificaNumero(entrada.lerInteiro("Digite um número:"));
     }
 
     private static void verificaNumero(int numero){
         if (numero % 2 == 0){
             System.out.println("O número " + numero + " é par");
         } else {
-            System.out.println("O número " + numero + " é impar");
+            System.out.println("O número " + numero + " é ímpar");
         }
     }
 
-    public static void perguntarNumeros(){
-
-        boolean entradaValidaNumero = false;
-        do {
-            System.out.println("Digite um número:");
-            try {
-                Condicionais.numero = sc.nextInt();
-                perguntaOutroNumero();
-                entradaValidaNumero = true;
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: são aceitos somente números inteiros");
-                sc.next();
-            }
-        } while (!entradaValidaNumero);
+    public static void perguntarNumeros(LeitorEntrada entrada){
+        int numero = entrada.lerInteiro("Digite um número:");
+        perguntaOutroNumero(numero, entrada);
     }
 
-    private static void perguntaOutroNumero(){
-        boolean entradaValidaNumero = false;
-        do {
-            System.out.println("Digite outro número: ");
-            try {
-                Condicionais.numero2 = sc.nextInt();
-                entradaValidaNumero = true;
-                verificaNumeros(Condicionais.numero, Condicionais.numero2);
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: são aceitos soemnte números inteiros");
-                sc.next();
-            }
-        } while (!entradaValidaNumero);
+    private static void perguntaOutroNumero(int numero, LeitorEntrada entrada){
+        int numero2 = entrada.lerInteiro("Digite outro número: ");
+        verificaNumeros(numero, numero2);
     }
 
     private static void verificaNumeros(int numero1, int numero2){
@@ -105,24 +45,8 @@ public class Condicionais {
         }
     }
 
-    public static void perguntarNota() {
-        boolean notaValida = false;
-
-        do {
-            System.out.println("Digite uma nota de 0 a 10:");
-            try {
-                nota = sc.nextInt();
-                if (nota < 0 || nota > 10) {
-                    System.out.println("A nota deve ser entre 0 e 10!");
-                } else {
-                    notaValida = true;
-                    verificaNota(nota);
-                }
-            } catch (InputMismatchException ime) {
-                System.out.println("Entrada inválida! Digite apenas números inteiros entre 0 e 10.");
-                sc.next(); // Limpa o valor inválido do Scanner para não travar o loop
-            }
-        } while (!notaValida);
+    public static void perguntarNota(LeitorEntrada entrada) {
+        verificaNota(entrada.lerInteiro("Digite uma nota de 0 a 10:", 0, 10));
     }
 
     private static void verificaNota(int notaPessoa) {
@@ -135,7 +59,7 @@ public class Condicionais {
         }
     }
 
-    public static void mostrarMenuSorveteria() {
+    public static void mostrarMenuSorveteria(LeitorEntrada entrada) {
         boolean continuar = true;
 
         while (continuar) {
@@ -145,13 +69,8 @@ public class Condicionais {
             System.out.println("3 - sorvete napolitano");
             System.out.println("4 - sair");
 
-            try {
-                int opcao = sc.nextInt();
-                continuar = saborSorvete(opcao);
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: São aceitos somente números inteiros!");
-                sc.next(); // Limpa o buffer do Scanner para evitar loop infinito
-            }
+            int opcao = entrada.lerInteiro("Escolha uma opção:");
+            continuar = saborSorvete(opcao);
         }
     }
 
@@ -175,24 +94,10 @@ public class Condicionais {
         }
     }
 
-    public static void perguntarIdade2(){
-        boolean entradaValidaIdade = false;
-        do {
-            System.out.println("Digite sua idade:");
-            try {
-                Condicionais.idade =  sc.nextInt();
-                if(Condicionais.idade >= 0 && Condicionais.idade <= 100){
-                    entradaValidaIdade = true;
-                    Condicionais.verificaIdade(Condicionais.idade);
-                } else {
-                    System.out.println("Só são aceitos números de 0 a 100");
-                }
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: são aceitos somente números de 0 a 100");
-                sc.next();
-            }
-        } while (!entradaValidaIdade);
-        Condicionais.verificaValorIngresso(Condicionais.idade);
+    public static void perguntarIdade2(LeitorEntrada entrada){
+        int idade = entrada.lerInteiro("Digite sua idade:", 0, 100);
+        verificaIdade(idade);
+        verificaValorIngresso(idade);
     }
 
     private static void verificaValorIngresso(int idadePessoa){
@@ -203,13 +108,10 @@ public class Condicionais {
         }
     }
 
-    public static void perguntarLadosTriangulo(){
-        System.out.println("Digite um lado do triangulo: ");
-        ladoTriangulo1 = sc.nextInt();
-        System.out.println("Digite o segundo lado do triangulo: ");
-        ladoTriangulo2 = sc.nextInt();
-        System.out.println("Digite o ultimo lado do triangulo: ");
-        ladoTriangulo3 = sc.nextInt();
+    public static void perguntarLadosTriangulo(LeitorEntrada entrada){
+        int ladoTriangulo1 = entrada.lerInteiro("Digite um lado do triangulo: ");
+        int ladoTriangulo2 = entrada.lerInteiro("Digite o segundo lado do triangulo: ");
+        int ladoTriangulo3 = entrada.lerInteiro("Digite o ultimo lado do triangulo: ");
         verificarTipoDeTriangulo(ladoTriangulo1, ladoTriangulo2, ladoTriangulo3);
     }
 

@@ -9,14 +9,14 @@ public class Main {
     public static void main(String[] args) {
         // Exercícios variáveis
         System.out.println("----------- 1- Exercícios variáveis -----------");
-        Variaveis.imprimirPessoa(Variaveis.nome);
-        Variaveis.imprimirPessoa(Variaveis.idade);
-        Variaveis.imprimirPessoa(Variaveis.altura);
-        Variaveis.imprimirPessoa(Variaveis.jaProgramou);
-        Variaveis.imprimirCidade(Variaveis.cidade);
-        Variaveis.imprimirNomeCompleto(Variaveis.nome, Variaveis.sobrenome);
-        Variaveis.imprimirPreco(Variaveis.preco);
-        Variaveis.imprimirTemHabilitacao(Variaveis.temCarteira);
+        Variaveis.imprimirPessoa("Isabela");
+        Variaveis.imprimirPessoa(27);
+        Variaveis.imprimirPessoa(1.7);
+        Variaveis.imprimirPessoa(true);
+        Variaveis.imprimirCidade("Salvador");
+        Variaveis.imprimirNomeCompleto("Isabela", "Cristina da Silva");
+        Variaveis.imprimirPreco(29.90);
+        Variaveis.imprimirTemHabilitacao(true);
 
         System.out.println("Desafio variáveis");
         Variaveis.trocarValorDeB();
@@ -24,99 +24,102 @@ public class Main {
 
         // Exercícios operadores
         System.out.println("----------- 2- Exercícios operadores -----------");
-        System.out.println(Operadores.soma(Operadores.a,Operadores.b));
-        System.out.println(Operadores.subtracao(Operadores.a,Operadores.b));
-        System.out.println(Operadores.multiplicacao(Operadores.a,Operadores.b));
-        System.out.println(Operadores.divisao(Operadores.a,Operadores.b));
-        System.out.println(Operadores.resto(Operadores.a,Operadores.b));
+        int a = 15;
+        int b = 4;
+        System.out.println(Operadores.soma(a, b));
+        System.out.println(Operadores.subtracao(a, b));
+        System.out.println(Operadores.multiplicacao(a, b));
+        System.out.println(Operadores.divisao(a, b));
+        System.out.println(Operadores.resto(a, b));
 
-        Operadores.saldo +=250;
-        System.out.println("Saldo + 250 = " + Operadores.saldo);
-        Operadores.saldo -=380;
-        System.out.println("Saldo - 380 = " + Operadores.saldo);
+        int saldo = 1000;
+        saldo += 250;
+        System.out.println("Saldo + 250 = " + saldo);
+        saldo -= 380;
+        System.out.println("Saldo - 380 = " + saldo);
 
-        Operadores.a = 10;
-        Operadores.b = 10;
-        System.out.println("a==b = " + (Operadores.a==Operadores.b));
-        System.out.println("a!=b = " + (Operadores.a!=Operadores.b));
-        System.out.println("a>b = " + (Operadores.a>Operadores.b));
-        System.out.println("a>=b = " + (Operadores.a>=Operadores.b));
+        a = 10;
+        b = 10;
+        System.out.println("a==b = " + (a == b));
+        System.out.println("a!=b = " + (a != b));
+        System.out.println("a>b = " + (a > b));
+        System.out.println("a>=b = " + (a >= b));
 
-        Operadores.verificadorHabilitacao(Operadores.idade, Operadores.temCarteira);
+        Operadores.verificadorHabilitacao(20, true);
 
-        Operadores.verificaDivisaoPor2(Operadores.numero);
-        Operadores.totalCompraArroz(Operadores.arroz);
-        Operadores.verificaDivisaoPor3e5(Operadores.numero1);
+        Operadores.verificaDivisaoPor2(30);
+        Operadores.totalCompraArroz(5.50);
+        Operadores.verificaDivisaoPor3e5(12);
 
 
         // Exercícios concatenação
         System.out.println("----------- 3- Exercícios concatenação -----------");
-        Concatenacao.apresentarPessoa(Concatenacao.nome, Concatenacao.idade);
-        Concatenacao.calcularMediaNotas(Concatenacao.nota1, Concatenacao.nota2);
-        Concatenacao.apresentarProduto(Concatenacao.preco);
-        Concatenacao.apresentarPessoa2(Concatenacao.nome, Concatenacao.idade, Concatenacao.altura);
-        Concatenacao.imprimirRecibo(Concatenacao.produto1, Concatenacao.produto2, Concatenacao.produto3, Concatenacao.preco1, Concatenacao.preco2, Concatenacao.preco3);
+        Concatenacao.apresentarPessoa("Isabela", 27);
+        Concatenacao.calcularMediaNotas(8.0, 7.0);
+        Concatenacao.apresentarProduto(50);
+        Concatenacao.apresentarPessoa2("Isabela", 27, 175.5);
+        Concatenacao.imprimirRecibo("Camiseta", "Bermuda", "Vestido", 50, 37.25, 21.49);
 
-        System.out.println(Concatenacao.total2);
-        Concatenacao.total2 += Concatenacao.preco1;
-        System.out.println(Concatenacao.total2);
-
-        Concatenacao.total2 += Concatenacao.preco2;
-        System.out.println(Concatenacao.total2);
-
-        Concatenacao.total2 += Concatenacao.preco3;
-        System.out.println(Concatenacao.total2);
+        double total = 0;
+        System.out.println(total);
+        total += 50;
+        System.out.println(total);
+        total += 37.25;
+        System.out.println(total);
+        total += 21.49;
+        System.out.println(total);
 
 
         // Exercícios Scanner
         System.out.println("----------- 4- Exercícios Scanner -----------");
-//        Scanear.perguntarNome();
-//        Scanear.perguntarIdade();
-//        Scanear.perguntarNumeros();
-//        Scanear.perguntarAlturaPeso();
-//        Scanear.perguntarIdadeNomeCidade();
+        LeitorEntrada entrada = new LeitorEntrada();
+//        entrada.perguntarNome();
+//        entrada.perguntarIdade();
+//        entrada.perguntarNumeros();
+//        entrada.perguntarAlturaPeso();
+//        entrada.perguntarIdadeNomeCidade();
 
 
         // Exercícios Condicionais
         System.out.println("----------- 5- Exercícios Condicionais -----------");
-//        Condicionais.perguntarIdade();
-//        Condicionais.perguntarNumero();
-//        Condicionais.perguntarNumeros();
-//        Condicionais.perguntarNota();
-//        Condicionais.mostrarMenuSorveteria();
-//        Condicionais.perguntarIdade2();
-//        Condicionais.perguntarLadosTriangulo();
+//        Condicionais.perguntarIdade(entrada);
+//        Condicionais.perguntarNumero(entrada);
+//        Condicionais.perguntarNumeros(entrada);
+//        Condicionais.perguntarNota(entrada);
+//        Condicionais.mostrarMenuSorveteria(entrada);
+//        Condicionais.perguntarIdade2(entrada);
+//        Condicionais.perguntarLadosTriangulo(entrada);
 
         // Exercícios Loops
         System.out.println("----------- 6- Exercícios Loops -----------");
         Loops.imprimirNumeros();
         Loops.imprimirNumerosRegressivos();
-//        Loops.pedirNumeroTabuada();
+//        Loops.pedirNumeroTabuada(entrada);
         Loops.imprimirNumerosPares();
         Loops.somaNumerosAte100();
         Loops.somaNumerosAte100While();
         Loops.iniciarJogo();
-//        Loops.perguntaAsteriscos();
+//        Loops.perguntaAsteriscos(entrada);
 
         // Exercícios Arrays
         System.out.println("----------- 7- Exercícios Arrays -----------");
-        Arrays.imprimirArrayNomes(0);
-        Arrays.imprimirArrayNomes(2);
-        Arrays.imprimirArrayNomes(4);
-        Arrays.imprimirArrayNotas();
-        Arrays.calcularArrayNotas();
-        Arrays.verificarNumeros();
-//        Arrays.perguntarNomesDesafio();
+        ListaArrays.imprimirArrayNomes(0);
+        ListaArrays.imprimirArrayNomes(2);
+        ListaArrays.imprimirArrayNomes(4);
+        ListaArrays.imprimirArrayNotas();
+        ListaArrays.calcularArrayNotas();
+        ListaArrays.verificarNumeros();
+//        ListaArrays.perguntarNomesDesafio(entrada);
 
         // Exercícios Strings
         System.out.println("----------- 8- Exercícios Strings -----------");
-//        Strings.perguntarNomeCompleto();
-//        Strings.perguntarNome();
-//        Strings.perguntarNome2();
-//        Strings.perguntarFrasePalavra();
-//        Strings.perguntarNome3();
-//        Strings.perguntarNome4();
-//        Strings.perguntarPalavra();
+//        Strings.perguntarNomeCompleto(entrada);
+//        Strings.perguntarNome(entrada);
+//        Strings.perguntarNome2(entrada);
+//        Strings.perguntarFrasePalavra(entrada);
+//        Strings.perguntarNome3(entrada);
+//        Strings.perguntarNome4(entrada);
+//        Strings.perguntarPalavra(entrada);
 
 
         // Exercícios Classes e Objetos
@@ -156,11 +159,11 @@ public class Main {
 
         // Exercícios Tratamento de exceções
         System.out.println("----------- 11- Exercícios Tratamento de exceções -----------");
-//        TratamentoExcecoes.doisNumeros();
-//        TratamentoExcecoes.mostrarPosicaoArray();
-//        TratamentoExcecoes.pedirIdade();
+//        TratamentoExcecoes.doisNumeros(entrada);
+//        TratamentoExcecoes.mostrarPosicaoArray(entrada);
+//        TratamentoExcecoes.pedirIdade(entrada);
         TratamentoExcecoes.imprimeNome();
         TratamentoExcecoes.imprimeListaNomes();
-//        TratamentoExcecoes.imprimeDesafioDivisao();
+//        TratamentoExcecoes.imprimeDesafioDivisao(entrada);
     }
 }

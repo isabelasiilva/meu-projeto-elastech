@@ -1,37 +1,28 @@
 package org.example.aula11_listaRevisao04Out;
 
-import java.util.Scanner;
-
 public class Strings {
-    static Scanner sc = new Scanner(System.in);
-
-    public static void perguntarNomeCompleto(){
-        System.out.println("Digite seu nome completo: ");
-        String nomeCompleto = sc.nextLine();
+    public static void perguntarNomeCompleto(LeitorEntrada entrada){
+        String nomeCompleto = entrada.lerTextoNaoVazio("Digite seu nome completo: ");
 
         System.out.println("O nome " + nomeCompleto + " tem " + nomeCompleto.replace(" ", "").length() + " letras");
     }
 
-    public static void perguntarNome(){
-        System.out.println("Digite seu nome: ");
-        String nome = sc.nextLine();
+    public static void perguntarNome(LeitorEntrada entrada){
+        String nome = entrada.lerTextoNaoVazio("Digite seu nome: ");
 
         System.out.println("O nome em maiúsculo: " + nome.toUpperCase());
         System.out.println("O nome em minúsculo: " + nome.toLowerCase());
     }
 
-    public static void perguntarNome2(){
-        System.out.println("Digite seu nome: ");
-        String nome = sc.nextLine();
+    public static void perguntarNome2(LeitorEntrada entrada){
+        String nome = entrada.lerTextoNaoVazio("Digite seu nome: ");
 
         System.out.println("A primeira letra do nome é: " + nome.charAt(0));
     }
-    public static void perguntarFrasePalavra(){
-        System.out.println("Digite uma frase: ");
-        String frase = sc.nextLine();
+    public static void perguntarFrasePalavra(LeitorEntrada entrada){
+        String frase = entrada.lerTexto("Digite uma frase: ");
 
-        System.out.println("Digite uma palavra: ");
-        String palavra = sc.nextLine();
+        String palavra = entrada.lerTextoNaoVazio("Digite uma palavra: ");
         if (frase.contains(palavra)) {
             System.out.println("A sua palavra está contida na frase");
         } else {
@@ -39,12 +30,10 @@ public class Strings {
         }
     }
 
-    public static void perguntarNome3(){
-        System.out.println("Digite um nome: ");
-        String nome = sc.nextLine();
+    public static void perguntarNome3(LeitorEntrada entrada){
+        String nome = entrada.lerTextoNaoVazio("Digite um nome: ");
 
-        System.out.println("Digite o mesmo nome de novo: ");
-        String nome2 = sc.nextLine();
+        String nome2 = entrada.lerTextoNaoVazio("Digite o mesmo nome de novo: ");
         if (nome.equalsIgnoreCase(nome2)) {
             System.out.println("O nome " + nome + " é igual a " + nome2 + "ignorando maiúsculas e minúsculas");
         } else {
@@ -52,16 +41,14 @@ public class Strings {
         }
     }
 
-    public static void perguntarNome4(){
-        System.out.println("Digite um nome: ");
-        String nome = sc.nextLine();
+    public static void perguntarNome4(LeitorEntrada entrada){
+        String nome = entrada.lerTextoNaoVazio("Digite um nome: ");
 
         System.out.println("O nome em maiúsculo e sem espaços é: " + nome.toUpperCase().trim());
     }
 
-    public static void perguntarPalavra(){
-        System.out.println("Digite uma palavra: ");
-        String palavra = sc.nextLine();
+    public static void perguntarPalavra(LeitorEntrada entrada){
+        String palavra = entrada.lerTextoNaoVazio("Digite uma palavra: ");
 
         int ultimaPosicao = palavra.length();
         int ultimaLetra = ultimaPosicao - 1;

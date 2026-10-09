@@ -1,11 +1,6 @@
 package org.example.aula11_listaRevisao04Out;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Loops {
-    static Scanner sc = new Scanner(System.in);
-
     public static void imprimirNumeros(){
         for (int i = 1; i <= 20; i++){
             System.out.println(i);
@@ -19,20 +14,9 @@ public class Loops {
         System.out.println("Fim!");
     }
 
-    public static void pedirNumeroTabuada() {
-        boolean entradaValida = false;
-
-        do {
-            System.out.println("Digite um número para saber a tabuada:");
-            try {
-                int numero = sc.nextInt();
-                imprimirTabuada(numero);
-                entradaValida = true; // Define como true para sair do loop
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: são aceitos somente números inteiros!\n");
-                sc.next(); // Limpa a entrada inválida do buffer do Scanner
-            }
-        } while (!entradaValida);
+    public static void pedirNumeroTabuada(LeitorEntrada entrada) {
+        int numero = entrada.lerInteiro("Digite um número para saber a tabuada:");
+        imprimirTabuada(numero);
     }
 
     private static void imprimirTabuada(int numero) {
@@ -80,9 +64,8 @@ public class Loops {
         }
     }
 
-    public static void perguntaAsteriscos(){
-        System.out.println("Escolha qual a altura do triângulo?");
-        int altura = sc.nextInt();
+    public static void perguntaAsteriscos(LeitorEntrada entrada){
+        int altura = entrada.lerInteiro("Escolha qual a altura do triângulo?");
 
         for (int i = 1; i <= altura; i++) {
 

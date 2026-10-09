@@ -1,75 +1,32 @@
 package org.example.aula11_listaRevisao04Out;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class TratamentoExcecoes {
-    static Scanner sc = new Scanner(System.in);
-    static int[] listaNotas = {5, 7, 4, 9, 6};
-    static String[] listaNomes = {"Marina", "José", "Mário"};
-
-    public static void doisNumeros() {
-        int n1 = 0;
-        int n2 = 0;
-        int divisao = 0;
-        boolean controlador1 = false;
-        boolean controlador2 = false;
-
-        // Leitura do primeiro número
-        do {
-            System.out.println("Digite o primeiro número:");
-            try {
-                n1 = sc.nextInt();
-                controlador1 = true;
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: digite um número inteiro válido!\n");
-                sc.next(); // Limpa o buffer do Scanner
-            }
-        } while (!controlador1);
-
-        // Leitura do segundo número
-        do {
-            System.out.println("Digite o segundo número:");
-            try {
-                n2 = sc.nextInt();
-                controlador2 = true;
-            } catch (InputMismatchException ime) {
-                System.out.println("Erro: digite um número inteiro válido!\n");
-                sc.next(); // Limpa o buffer do Scanner
-            }
-        } while (!controlador2);
+    public static void doisNumeros(LeitorEntrada entrada) {
+        int n1 = entrada.lerInteiro("Digite o primeiro número:");
+        int n2 = entrada.lerInteiro("Digite o segundo número:");
 
         try {
-            divisao = n1 / n2;
-            System.out.println("\nOs números digitados foram: " + n1 + " e " + n2 + " a média é " + divisao);
+            int divisao = n1 / n2;
+            System.out.println("\nOs números digitados foram: " + n1 + " e " + n2 + ". A divisão é " + divisao);
         } catch (ArithmeticException ae) {
             System.out.println("Não pode dividir por zero!");
         }
 
     }
 
-    public static void mostrarPosicaoArray(){
+    public static void mostrarPosicaoArray(LeitorEntrada entrada){
+        int[] listaNotas = {5, 7, 4, 9, 6};
         try {
-            System.out.println("Digite uma posição de array para ser verificada:");
-            int posicao = sc.nextInt();
+            int posicao = entrada.lerInteiro("Digite uma posição de array para ser verificada:");
             System.out.println("O número nessa posição é " + listaNotas[posicao]);
         } catch (ArrayIndexOutOfBoundsException aiobe) {
             System.out.println("O array não tem essa posição!");
         }
     }
 
-    public static void pedirIdade(){
-        try {
-            System.out.println("Digite uma idade entre 0 e 100:");
-            int idade = sc.nextInt();
-            if (idade < 0 || idade > 100) {
-                System.out.println("Só são aceitos números entre 0 e 100!");
-            } else {
-                System.out.println("Sua idade é " + idade);
-            }
-        }catch (InputMismatchException ime) {
-            System.out.println("Digite apenas números inteiros!");
-        }
+    public static void pedirIdade(LeitorEntrada entrada){
+        int idade = entrada.lerInteiro("Digite uma idade entre 0 e 100:", 0, 100);
+        System.out.println("Sua idade é " + idade);
     }
 
     public static void imprimeNome(){
@@ -82,6 +39,7 @@ public class TratamentoExcecoes {
     }
 
     public static void imprimeListaNomes(){
+        String[] listaNomes = {"Marina", "José", "Mário"};
         try {
             System.out.println(listaNomes[5]);
         }catch (ArrayIndexOutOfBoundsException aioobe){
@@ -91,13 +49,12 @@ public class TratamentoExcecoes {
         }
     }
 
-    public static void imprimeDesafioDivisao() {
+    public static void imprimeDesafioDivisao(LeitorEntrada entrada) {
+        int[] listaNotas = {5, 7, 4, 9, 6};
         try{
-            System.out.println("Digite um número:");
-            int numero = sc.nextInt();
+            int numero = entrada.lerInteiro("Digite um número:");
             System.out.println(100/numero);
-            System.out.println("Digite uma posição do array para verificar:");
-            int posicao = sc.nextInt();
+            int posicao = entrada.lerInteiro("Digite uma posição do array para verificar:");
             System.out.println(listaNotas[posicao]);
         } catch(ArithmeticException ae){
             System.out.println("Não é possível dividir por zero!");

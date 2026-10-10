@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    //ArrayList
-
-    /*  .add(valor);
+    /*
+    ArrayList
+        .add(valor);
         .add(posição, valor)
         .get();
         .size();
@@ -17,7 +17,9 @@ public class Main {
         .isEmpty();
         .addAll(List.of());
 
-        */
+      Hashmap
+     */
+
 
     public static void main(String[] args) {
         ArrayList<Integer> lista = new ArrayList<>();
@@ -28,7 +30,7 @@ public class Main {
         System.out.println(lista);
 
         // adicionar varios valores de uma vez
-        lista.addAll(List.of(13,20,33,25,3));
+        lista.addAll(List.of(13,20,33,25,3)); // adicionando varios valores de uma vez
 
         // pega o valor que esta na posição 3
         System.out.println(lista.get(3));
@@ -40,5 +42,13 @@ public class Main {
         // muda o numero que ta na posição 0 para o valor 9
         lista.set(0,9);
         System.out.println(lista);
+
+
+//        ArrayList<String> listaNome = new ArrayList<>();
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Digite o nome: ");
+//        String nome = sc.nextLine();
+//        listaNome.add(nome);
+//        System.out.println(listaNome);
     }
 }

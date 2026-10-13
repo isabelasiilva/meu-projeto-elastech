@@ -1,4 +1,4 @@
-package org.example.aula15_13Out.heranca;
+package org.example.aula15_08Out.heranca;
 
 public class Diretora extends Gerente{
     public void definirMeta(String meta){

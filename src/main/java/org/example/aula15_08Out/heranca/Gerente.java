@@ -1,4 +1,4 @@
-package org.example.aula15_13Out.heranca;
+package org.example.aula15_08Out.heranca;
 
 public class Gerente extends Funcionario implements Exportavel,  Notificavel {
     public void aprovarFerias(String nome){

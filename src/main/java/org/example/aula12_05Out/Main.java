@@ -2,6 +2,7 @@ package org.example.aula12_05Out;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     /*
@@ -55,11 +56,11 @@ public class Main {
         System.out.println(lista);
 
 
-//        ArrayList<String> listaNome = new ArrayList<>();
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Digite o nome: ");
-//        String nome = sc.nextLine();
-//        listaNome.add(nome);
-//        System.out.println(listaNome);
+        ArrayList<String> listaNome = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o nome: ");
+        String nome = sc.nextLine();
+        listaNome.add(nome);
+        System.out.println(listaNome);
     }
 }

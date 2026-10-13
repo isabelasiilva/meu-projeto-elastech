@@ -1,9 +1,16 @@
 package org.example.aula15_08Out.heranca;
 
 public class Aluna extends Pessoa {
-    String curso;
+    private String curso;
 
     public void estudar(){
-        System.out.println(nome + " está estudando " + curso);
+        System.out.println(getNome() + " está estudando " + curso);
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 }

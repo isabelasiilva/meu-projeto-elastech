@@ -2,8 +2,6 @@ package org.example.aula11_listaRevisao04Out.desafio;
 
 import org.example.aula11_listaRevisao04Out.LeitorEntrada;
 
-import java.util.Scanner;
-
 public class Menu {
     private final LeitorEntrada entrada;
     private final Filme[] listaFilmes = new Filme[5];
@@ -89,9 +87,7 @@ public class Menu {
     }
 
     private void buscarFilmes(){
-            Scanner entrada = new Scanner(System.in);
-            System.out.println("Digite o titulo do filme:");
-            String titulo = entrada.nextLine();
+            String titulo = entrada.lerTexto("Digite o titulo do filme:");
             boolean condicaoFilme = false;
 
             for (int i = 0; i < contadorFilme; i++) {

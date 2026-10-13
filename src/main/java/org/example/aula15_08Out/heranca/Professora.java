@@ -1,14 +1,22 @@
 package org.example.aula15_08Out.heranca;
 
 public class Professora extends Pessoa{
-    String disciplina;
+    private String disciplina;
 
     public void lancarNota(Aluna aluna, double nota){
-        System.out.printf("%s lançou a nota %.1f para %s",  this.nome,  nota,  aluna.nome);
+        System.out.printf("%s lançou a nota %.1f para %s",  getNome(),  nota,  aluna.getNome());
     }
 
     @Override
     public void apresentar(){
-        System.out.println("Oi, eu sou " + this.nome + " e ensino " + this.disciplina);
+        System.out.println("Oi, eu sou " + getNome() + " e ensino " + this.disciplina);
+    }
+
+    public String getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
     }
 }

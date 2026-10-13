@@ -19,14 +19,14 @@ public class Main {
 
         System.out.println("--- Exercício 3 ---");
         Aluna maria = new Aluna();
-        maria.nome = "Maria";
-        maria.idade = 20;
-        maria.curso = "Java e IA";
+        maria.setNome("Maria");
+        maria.setIdade(20);
+        maria.setCurso("Java e IA");
 
         Professora flora = new Professora();
-        flora.nome = "Flora";
-        flora.idade = 30;
-        flora.disciplina = "Java e IA";
+        flora.setNome("Flora");
+        flora.setIdade(30);
+        flora.setDisciplina("Java e IA");
 
         maria.apresentar();
         maria.estudar();
@@ -35,8 +35,8 @@ public class Main {
 
         System.out.println("--- Exercício 4 ---");
         Pessoa beatriz = new Estagiaria();
-        beatriz.nome = "Beatriz";
-        beatriz.idade = 24;
+        beatriz.setNome("Beatriz");
+        beatriz.setIdade(24);
         beatriz.apresentar();
 
         System.out.println("--- Exercício 5 ---");

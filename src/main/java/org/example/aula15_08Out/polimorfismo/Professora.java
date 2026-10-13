@@ -11,10 +11,18 @@ public class Professora extends Pessoa {
 //    }
 
     void apresentar(String cargo) {
-        System.out.println("Oi, sou " + nome + ", " + cargo);
+        System.out.println("Oi, sou " + getNome() + ", " + cargo);
     }
 
     public void lancarNota(Aluna aluna, double nota){
-        System.out.printf("%s lançou a nota %.1f para %s\n",  this.nome,  nota,  aluna.nome);
+        System.out.printf("%s lançou a nota %.1f para %s\n",  getNome(),  nota,  aluna.getNome());
+    }
+
+    public String getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
     }
 }

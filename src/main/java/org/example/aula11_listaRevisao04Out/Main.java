@@ -73,33 +73,33 @@ public class Main {
         // Exercícios Scanner
         System.out.println("----------- 4- Exercícios Scanner -----------");
         LeitorEntrada entrada = new LeitorEntrada();
-//        entrada.perguntarNome();
-//        entrada.perguntarIdade();
-//        entrada.perguntarNumeros();
-//        entrada.perguntarAlturaPeso();
-//        entrada.perguntarIdadeNomeCidade();
+        entrada.perguntarNome();
+        entrada.perguntarIdade();
+        entrada.perguntarNumeros();
+        entrada.perguntarAlturaPeso();
+        entrada.perguntarIdadeNomeCidade();
 
 
         // Exercícios Condicionais
         System.out.println("----------- 5- Exercícios Condicionais -----------");
-//        Condicionais.perguntarIdade(entrada);
-//        Condicionais.perguntarNumero(entrada);
-//        Condicionais.perguntarNumeros(entrada);
-//        Condicionais.perguntarNota(entrada);
-//        Condicionais.mostrarMenuSorveteria(entrada);
-//        Condicionais.perguntarIdade2(entrada);
-//        Condicionais.perguntarLadosTriangulo(entrada);
+        Condicionais.perguntarIdade(entrada);
+        Condicionais.perguntarNumero(entrada);
+        Condicionais.perguntarNumeros(entrada);
+        Condicionais.perguntarNota(entrada);
+        Condicionais.mostrarMenuSorveteria(entrada);
+        Condicionais.perguntarIdade2(entrada);
+        Condicionais.perguntarLadosTriangulo(entrada);
 
         // Exercícios Loops
         System.out.println("----------- 6- Exercícios Loops -----------");
         Loops.imprimirNumeros();
         Loops.imprimirNumerosRegressivos();
-//        Loops.pedirNumeroTabuada(entrada);
+        Loops.pedirNumeroTabuada(entrada);
         Loops.imprimirNumerosPares();
         Loops.somaNumerosAte100();
         Loops.somaNumerosAte100While();
         Loops.iniciarJogo();
-//        Loops.perguntaAsteriscos(entrada);
+        Loops.perguntaAsteriscos(entrada);
 
         // Exercícios Arrays
         System.out.println("----------- 7- Exercícios Arrays -----------");
@@ -109,17 +109,17 @@ public class Main {
         ListaArrays.imprimirArrayNotas();
         ListaArrays.calcularArrayNotas();
         ListaArrays.verificarNumeros();
-//        ListaArrays.perguntarNomesDesafio(entrada);
+        ListaArrays.perguntarNomesDesafio(entrada);
 
         // Exercícios Strings
         System.out.println("----------- 8- Exercícios Strings -----------");
-//        Strings.perguntarNomeCompleto(entrada);
-//        Strings.perguntarNome(entrada);
-//        Strings.perguntarNome2(entrada);
-//        Strings.perguntarFrasePalavra(entrada);
-//        Strings.perguntarNome3(entrada);
-//        Strings.perguntarNome4(entrada);
-//        Strings.perguntarPalavra(entrada);
+        Strings.perguntarNomeCompleto(entrada);
+        Strings.perguntarNome(entrada);
+        Strings.perguntarNome2(entrada);
+        Strings.perguntarFrasePalavra(entrada);
+        Strings.perguntarNome3(entrada);
+        Strings.perguntarNome4(entrada);
+        Strings.perguntarPalavra(entrada);
 
 
         // Exercícios Classes e Objetos
@@ -159,11 +159,11 @@ public class Main {
 
         // Exercícios Tratamento de exceções
         System.out.println("----------- 11- Exercícios Tratamento de exceções -----------");
-//        TratamentoExcecoes.doisNumeros(entrada);
-//        TratamentoExcecoes.mostrarPosicaoArray(entrada);
-//        TratamentoExcecoes.pedirIdade(entrada);
+        TratamentoExcecoes.doisNumeros(entrada);
+        TratamentoExcecoes.mostrarPosicaoArray(entrada);
+        TratamentoExcecoes.pedirIdade(entrada);
         TratamentoExcecoes.imprimeNome();
         TratamentoExcecoes.imprimeListaNomes();
-//        TratamentoExcecoes.imprimeDesafioDivisao(entrada);
+        TratamentoExcecoes.imprimeDesafioDivisao(entrada);
     }
 }

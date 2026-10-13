@@ -18,6 +18,17 @@ public class Main {
         .addAll(List.of());
 
     Hashmap
+        .put("Ana", 28);
+        .get("Ana");
+        .getOrDefault("Bia", 0);
+        .containsKey("Ana");
+        .containsValue(28);
+        .remove("Ana");
+        .size();
+        .isEmpty();
+        .keySet();
+        .values();
+        .putAll(Map.of());
      */
 
 

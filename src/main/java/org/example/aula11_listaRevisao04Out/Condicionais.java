@@ -116,7 +116,9 @@ public class Condicionais {
     }
 
     private static void verificarTipoDeTriangulo(int lado1, int lado2, int lado3){
-        if (lado1 == lado2 && lado1 != lado3 || lado1 == lado3 && lado1 != lado2 || lado2 == lado3 && lado1 != lado3){
+        if ((lado1 == lado2 && lado1 != lado3) ||
+            (lado1 == lado3 && lado1 != lado2) ||
+            (lado2 == lado3 && lado1 != lado3)) {
             System.out.println("É um triângulo isósceles! Tem 2 lados iguais");
         } else if (lado1 == lado2 && lado1 == lado3){
             System.out.println("É um triângulo equilátero! Os 3 lados são iguais");

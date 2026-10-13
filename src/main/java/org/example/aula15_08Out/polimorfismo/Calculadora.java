@@ -12,6 +12,6 @@ public class Calculadora {
     }
 
     public void calcularArea(int raio){
-        System.out.println("Área do círculo: " + (2*pi*raio));
+        System.out.println("Área do círculo: " + (pi*raio*raio));
     }
 }

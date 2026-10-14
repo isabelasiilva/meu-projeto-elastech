@@ -6,15 +6,6 @@ public class Pet {
     private double peso;
     private String porte;
 
-    public Pet() {}
-
-    public Pet(String nome, String especie, double peso, String porte) {
-        this.nome = nome;
-        this.especie = especie;
-        this.peso = peso;
-        this.porte = porte;
-    }
-
     public String verificaPorteDoPet(){
         if (this.getPeso() < 10) {
             return "Pequeno";
@@ -23,6 +14,10 @@ public class Pet {
         } else{
             return "Grande";
         }
+    }
+
+    public void emitirSom(){
+        System.out.println(nome + " está fazendo som");
     }
 
     public String getNome() {

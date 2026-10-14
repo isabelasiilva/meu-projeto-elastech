@@ -7,7 +7,8 @@ public class Petshop {
     boolean condicaoMenu = true;
 
     Scanner ler = new Scanner(System.in);
-    Pet[] listaPets = new Pet[5];
+    //Pet[] listaPets = new Pet[5];
+    ArrayList<Pet> listaPets = new ArrayList<>();
     Banho darBanhoEmPet =  new Banho();
     Tosa tosarPet = new Tosa();
     Consulta consultaPet = new Consulta();
@@ -30,6 +31,8 @@ public class Petshop {
             System.out.println("6 - Atender o próximo");
             System.out.println("7 - Fazer pacote de serviço: banho, tosa, consulta e vacina");
             System.out.println("8 - Ver quantos pets estão cadastrados");
+            System.out.println("9 - Ver porte de pets que estão cadastrados");
+            System.out.println("10 - Atender todos da fila do banho");
             System.out.println("0 - Sair do sistema");
 
             System.out.print("Opcao: ");
@@ -67,20 +70,25 @@ public class Petshop {
                     case 8:
                         mostrarQuantosPetsCadastrados();
                         break;
+                    case 9:
+                        mostrarPortePetsCadastrados();
+                        break;
+                    case 10:
+                        atenderTodosFilaDoBanho();
+                        break;
                     default:
-                        System.out.println("Opcao invalida. Escolha entre 0 e 3.");
+                        System.out.println("Opção invalida. Escolha entre 0 e 3.");
                         break;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Erro: digite apenas numeros inteiros.");
+                System.out.println("Erro: digite apenas números inteiros.");
             }
 
         } while (condicaoMenu);
     }
 
-
     private void cadastrarFichaPet() {
-        if (contador < listaPets.length) {
+//        if (contador < listaPets.length) { // usado se listaPets for Array simples
             System.out.println("Cadastrando Ficha de Pet");
             Pet novoPet = new Pet();
             Cachorro cachorro = new Cachorro();
@@ -134,41 +142,57 @@ public class Petshop {
                 cachorro.setEspecie(novoPet.getEspecie());
                 cachorro.setPeso(novoPet.getPeso());
                 System.out.println("Foi cadastrado um cachorro com sucesso!");
-                listaPets[contador] = cachorro;
+//                listaPets[contador] = cachorro; // usado se listaPets for Array simples
+                listaPets.add(cachorro);
             } else if (novoPet.getEspecie().equalsIgnoreCase("gato")) {
                 gato.setNome(novoPet.getNome());
                 gato.setEspecie(novoPet.getEspecie());
                 gato.setPeso(novoPet.getPeso());
                 System.out.println("Foi cadastrado um gato com sucesso!");
-                listaPets[contador] = gato;
+//                listaPets[contador] = gato; // usado se listaPets for Array simples
+                listaPets.add(gato);
             }else {
                 System.out.println("Foi cadastrado com sucesso!");
-                listaPets[contador] = novoPet;
+//                listaPets[contador] = novoPet; // usado se listaPets for Array simples
+                listaPets.add(novoPet);
             }
 
             imprimirFichaDoPet();
             contador++;
-        } else {
-            System.out.println("Cadastro cheio!");
-        }
+//        } else {      // usado se listaPets for Array simples
+//            System.out.println("Cadastro cheio!");
+//        }
     }
 
     private void imprimirFichaDoPet() {
-        System.out.println(listaPets[contador].getNome() + " (" +
-                        listaPets[contador].getEspecie() + ") - " +
-                        listaPets[contador].getPeso() + " - Porte: " +
-                        listaPets[contador].verificaPorteDoPet());
+//      usado se listaPets for Array simples
+//        System.out.println(listaPets[contador].getNome() + " (" +
+//                        listaPets[contador].getEspecie() + ") - " +
+//                        listaPets[contador].getPeso() + " - Porte: " +
+//                        listaPets[contador].verificaPorteDoPet());
+
+        String nomePet = listaPets.get(contador).getNome();
+        String especiePet = listaPets.get(contador).getEspecie();
+        double pesoPet = listaPets.get(contador).getPeso();
+        String portePet = listaPets.get(contador).verificaPorteDoPet();
+
+        System.out.println(nomePet + " / " + especiePet + " / " + pesoPet + " / " + portePet);
     }
 
     private void imprimirPetsCadastrados(){
-        if (listaPets[0] == null) {
-            System.out.println("Sem registros cadastrados!");
-        } else {
-            System.out.println("--- PETS CADASTRADOS ---");
-            for (int i = 0; i < contador; i++) {
-                System.out.println(listaPets[i].getNome() + " (" + listaPets[i].getEspecie() + ") - " + listaPets[i].getPeso() + " - " + listaPets[i].verificaPorteDoPet());
-                listaPets[i].emitirSom();
-            }
+        // usado se listaPets for Array simples
+//        if (listaPets[0] == null) {
+//            System.out.println("Sem registros cadastrados!");
+//        } else {
+//            System.out.println("--- PETS CADASTRADOS ---");
+//            for (int i = 0; i < contador; i++) {
+//                System.out.println(listaPets[i].getNome() + " (" + listaPets[i].getEspecie() + ") - " + listaPets[i].getPeso() + " - " + listaPets[i].verificaPorteDoPet());
+//                listaPets[i].emitirSom();
+//            }
+//        }
+        System.out.println("--- PETS CADASTRADOS ---");
+        for (Pet pet : listaPets) {
+            System.out.println(pet.getNome() + " - " + pet.getEspecie() + " - " + pet.getPeso() + " - Porte: " + pet.verificaPorteDoPet());
         }
     }
 
@@ -176,37 +200,51 @@ public class Petshop {
         System.out.println("Digite o nome do pet:");
         String busca = ler.nextLine();
         boolean condicaoBusca = false;
-        int posicaoEncontrada = 0;
+//        int posicaoEncontrada = 0;
 
+//      usado se listaPets for Array simples
+//        for  (int i = 0; i < contador; i++) {
+//            if (listaPets[i].getNome().equalsIgnoreCase(busca)) {
+//                condicaoBusca = true;
+//                posicaoEncontrada = i;
+//            }
+//        }
+//        if (condicaoBusca) {
+//            System.out.println("O nome já está cadastrado!");
+//            System.out.println(listaPets[posicaoEncontrada].getNome() + " (" +
+//                    listaPets[posicaoEncontrada].getEspecie() + ") - " +
+//                    listaPets[posicaoEncontrada].getPeso() + " - Porte: " +
+//                    listaPets[posicaoEncontrada].verificaPorteDoPet());
+//        } else {
+//            System.out.println("O nome não está cadastrado!");
+//        }
 
-        for  (int i = 0; i < contador; i++) {
-            if (listaPets[i].getNome().equalsIgnoreCase(busca)) {
+        for  (Pet pet : listaPets) {
+            if(pet.getNome().equalsIgnoreCase(busca)){
                 condicaoBusca = true;
-                posicaoEncontrada = i;
             }
         }
-
         if (condicaoBusca) {
-            System.out.println("O nome já está cadastrado!");
-            System.out.println(listaPets[posicaoEncontrada].getNome() + " (" +
-                    listaPets[posicaoEncontrada].getEspecie() + ") - " +
-                    listaPets[posicaoEncontrada].getPeso() + " - Porte: " +
-                    listaPets[posicaoEncontrada].verificaPorteDoPet());
-        } else {
+            System.out.println("O nome já está cadastrado");
+        }else {
             System.out.println("O nome não está cadastrado!");
         }
     }
 
     private void verEspeciesCadastradas() {
-        if (listaPets[0] != null) {
-            for (int i = 0; i < contador; i++) {
-                listaEspecies.add(listaPets[i].getEspecie());
+        // usado se listaPets for Array simples
+//        if (listaPets[0] != null) {
+//            for (int i = 0; i < contador; i++) {
+//                listaEspecies.add(listaPets[i].getEspecie().toUpperCase()); /
+//            }
+            for (Pet especiePet : listaPets) {
+                listaEspecies.add(especiePet.getEspecie().toUpperCase());
             }
             System.out.println(listaEspecies);
             System.out.println("Total de espécies diferentes: " + listaEspecies.size());
-        } else {
-            System.out.println("Nenhum Pet encontrado!");
-        }
+//        } else {
+//            System.out.println("Nenhum Pet encontrado!");
+//        }
     }
 
     private void entrarNaFilaDoBanho(){
@@ -243,10 +281,40 @@ public class Petshop {
     }
 
     private void mostrarQuantosPetsCadastrados(){
-        if (listaPets[0] == null) {
-            System.out.println("Sem registros cadastrados!");
+        //      usado se listaPets for Array simples
+//        if (listaPets[0] == null) {
+//            System.out.println("Sem registros cadastrados!");
+//        } else {
+//            System.out.println("Total: " + contador);
+//        }
+        System.out.println("Total: " + listaPets.size());
+    }
+
+    private void mostrarPortePetsCadastrados(){
+        //      usado se listaPets for Array simples
+//        if (listaPets[0] == null) {
+//            System.out.println("Sem registros cadastrados!");
+//        } else  {
+            System.out.println("Escolha o porte pequeno, médio ou grande");
+            String opcaoPorte = ler.nextLine();
+            for (Pet pet : listaPets) {
+                if (pet.verificaPorteDoPet().equalsIgnoreCase(opcaoPorte)) {
+                    System.out.println(pet.getNome());
+                } else {
+                    System.out.println("Não encontrado!");
+                }
+            }
+//        }
+    }
+
+    private void atenderTodosFilaDoBanho(){
+        if (!filaDoBanho.isEmpty()) {
+            System.out.println("Atendendo todos da fila do banho: " + filaDoBanho + "...");
+            //darBanhoEmPet.oferecerServico(filaDoBanho.poll());
+            filaDoBanho.clear();
+            System.out.println("Fila vazia! " +  filaDoBanho);
         } else {
-            System.out.println("Total: " + contador);
+            System.out.println("A fila está vazia!");
         }
     }
 }

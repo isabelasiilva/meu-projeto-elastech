@@ -5,4 +5,8 @@ public class Cachorro extends Pet {
     public void emitirSom(){
         System.out.println(getNome() + " está latindo");
     }
+
+//    public void buscarBolinha(){
+//        System.out.println(getNome() + " vai buscar a bolinha");
+//    }
 }

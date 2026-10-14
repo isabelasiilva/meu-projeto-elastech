@@ -1,4 +1,4 @@
-package org.example.aula16_13Out;
+package org.example.aula16_13Out.atividadeEncapsulamento;
 
 public class Produto {
     private String codigoInterno = "X-99";

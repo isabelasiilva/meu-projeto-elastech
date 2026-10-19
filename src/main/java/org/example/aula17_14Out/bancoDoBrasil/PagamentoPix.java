@@ -1,4 +1,4 @@
-package org.example.aula17_14Out.banco;
+package org.example.aula17_14Out.bancoDoBrasil;
 
 public class PagamentoPix implements Pagamento {
     @Override

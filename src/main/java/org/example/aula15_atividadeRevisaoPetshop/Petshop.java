@@ -3,20 +3,19 @@ package org.example.aula15_atividadeRevisaoPetshop;
 import java.util.*;
 
 public class Petshop {
-    int contador = 0;
-    boolean condicaoMenu = true;
+    private int contador = 0;
 
-    Scanner ler = new Scanner(System.in);
+    private Scanner ler = new Scanner(System.in);
     //Pet[] listaPets = new Pet[5];
-    ArrayList<Pet> listaPets = new ArrayList<>();
-    Banho darBanhoEmPet =  new Banho();
-    Tosa tosarPet = new Tosa();
-    Consulta consultaPet = new Consulta();
-    Vacina vacinarPet = new Vacina();
+    private ArrayList<Pet> listaPets = new ArrayList<>();
+    private Banho darBanhoEmPet =  new Banho();
+    private Tosa tosarPet = new Tosa();
+    private Consulta consultaPet = new Consulta();
+    private Vacina vacinarPet = new Vacina();
 
-    HashSet<String> listaEspecies =  new HashSet<>();
-    Queue<String> filaDoBanho = new ArrayDeque<>();
-    ArrayList<Servico> servicos = new ArrayList<>();
+    private HashSet<String> listaEspecies =  new HashSet<>();
+    private Queue<String> filaDoBanho = new ArrayDeque<>();
+    private ArrayList<Servico> servicos = new ArrayList<>();
 
     public void mostrarMenu() {
         boolean condicaoMenu = true;
@@ -174,9 +173,9 @@ public class Petshop {
         String nomePet = listaPets.get(contador).getNome();
         String especiePet = listaPets.get(contador).getEspecie();
         double pesoPet = listaPets.get(contador).getPeso();
-        String portePet = listaPets.get(contador).verificaPorteDoPet();
+        String portePet = listaPets.get(contador).getPorte();
 
-        System.out.println(nomePet + " / " + especiePet + " / " + pesoPet + " / " + portePet);
+        System.out.println("Nome: " + nomePet + " / Espécie: " + especiePet + " / Peso: " + pesoPet + " / Porte: " + portePet);
     }
 
     private void imprimirPetsCadastrados(){
@@ -192,7 +191,7 @@ public class Petshop {
 //        }
         System.out.println("--- PETS CADASTRADOS ---");
         for (Pet pet : listaPets) {
-            System.out.println(pet.getNome() + " - " + pet.getEspecie() + " - " + pet.getPeso() + " - Porte: " + pet.verificaPorteDoPet());
+            System.out.println(pet.getNome() + " - " + pet.getEspecie() + " - " + pet.getPeso() + " - Porte: " + pet.getPorte());
         }
     }
 
@@ -298,7 +297,7 @@ public class Petshop {
             System.out.println("Escolha o porte pequeno, médio ou grande");
             String opcaoPorte = ler.nextLine();
             for (Pet pet : listaPets) {
-                if (pet.verificaPorteDoPet().equalsIgnoreCase(opcaoPorte)) {
+                if (pet.getPorte().equalsIgnoreCase(opcaoPorte)) {
                     System.out.println(pet.getNome());
                 } else {
                     System.out.println("Não encontrado!");

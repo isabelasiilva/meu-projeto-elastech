@@ -7,7 +7,9 @@ import java.util.*;
 public class Petshop {
     private int contador = 0;
 
-    private Scanner ler = new Scanner(System.in);
+    private Scanner ler;
+    private CadastroPet cadastroPet;
+
     private ArrayList<Pet> listaPets = new ArrayList<>();
     private Banho darBanhoEmPet =  new Banho();
     private Tosa tosarPet = new Tosa();
@@ -17,6 +19,11 @@ public class Petshop {
     private HashSet<String> listaEspecies =  new HashSet<>();
     private Queue<String> filaDoBanho = new ArrayDeque<>();
     private ArrayList<Servico> servicos = new ArrayList<>();
+
+    public Petshop() {
+        this.ler = new Scanner(System.in);
+        this.cadastroPet = new CadastroPet(ler);
+    }
 
     public void mostrarMenu() {
         boolean condicaoMenu = true;
@@ -47,7 +54,9 @@ public class Petshop {
                         condicaoMenu = false;
                         break;
                     case 1:
-                        cadastrarFichaPet();
+                        listaPets.add(cadastroPet.cadastrarFichaPet());
+                        imprimirFichaDoPet(contador);
+                        contador++;
                         break;
                     case 2:
                         imprimirPetsCadastrados();
@@ -77,7 +86,7 @@ public class Petshop {
                         atenderTodosFilaDoBanho();
                         break;
                     default:
-                        System.out.println("Opção invalida. Escolha entre 0 e 3.");
+                        System.out.println("Opção invalida. Escolha entre 0 e 10.");
                         break;
                 }
             } catch (NumberFormatException e) {
@@ -87,81 +96,13 @@ public class Petshop {
         } while (condicaoMenu);
     }
 
-    private void cadastrarFichaPet() {
-            System.out.println("Cadastrando Ficha de Pet");
-            Pet novoPet = new Pet();
-            Cachorro cachorro = new Cachorro();
-            Gato gato = new Gato();
-            String nome;
-            String especie;
-            double peso;
 
-            // Valida nome
-            do {
-                System.out.println("Digite o nome:");
-                nome = ler.nextLine().trim();
-                if (nome.isEmpty()) {
-                    System.out.println("Erro: o nome não pode estar vazio.");
-                }
-                novoPet.setNome(nome);
-            } while (nome.isEmpty());
 
-            // Valida espécie
-            do {
-                System.out.println("Digite a especie:");
-                especie = ler.nextLine().trim();
-                if (especie.isEmpty()) {
-                    System.out.println("Erro: a especie não pode estar vazia.");
-                }
-                novoPet.setEspecie(especie);
-            } while (especie.isEmpty());
-
-            // Valida peso
-            boolean pesoValido = false;
-            while (!pesoValido) {
-                System.out.println("Digite o peso:");
-                try {
-                    peso = ler.nextDouble();
-                    ler.nextLine(); // limpa o buffer
-
-                    if (peso <= 0) {
-                        System.out.println("Erro: o peso deve ser maior que zero.");
-                    } else {
-                        novoPet.setPeso(peso);
-                        pesoValido = true;
-                    }
-                } catch (InputMismatchException ime) {
-                    System.out.println("Erro: digite um número válido para o peso.");
-                    ler.nextLine(); // descarta a entrada inválida
-                }
-            }
-
-            if (novoPet.getEspecie().equalsIgnoreCase("cachorro")) {
-                cachorro.setNome(novoPet.getNome());
-                cachorro.setEspecie(novoPet.getEspecie());
-                cachorro.setPeso(novoPet.getPeso());
-                System.out.println("Foi cadastrado um cachorro com sucesso!");
-                listaPets.add(cachorro);
-            } else if (novoPet.getEspecie().equalsIgnoreCase("gato")) {
-                gato.setNome(novoPet.getNome());
-                gato.setEspecie(novoPet.getEspecie());
-                gato.setPeso(novoPet.getPeso());
-                System.out.println("Foi cadastrado um gato com sucesso!");
-                listaPets.add(gato);
-            }else {
-                System.out.println("Foi cadastrado com sucesso!");
-                listaPets.add(novoPet);
-            }
-
-            imprimirFichaDoPet();
-            contador++;
-    }
-
-    private void imprimirFichaDoPet() {
-        String nomePet = listaPets.get(contador).getNome();
-        String especiePet = listaPets.get(contador).getEspecie();
-        double pesoPet = listaPets.get(contador).getPeso();
-        String portePet = listaPets.get(contador).getPorte();
+    private void imprimirFichaDoPet(int posicao) {
+        String nomePet = listaPets.get(posicao).getNome();
+        String especiePet = listaPets.get(posicao).getEspecie();
+        double pesoPet = listaPets.get(posicao).getPeso();
+        String portePet = listaPets.get(posicao).getPorte();
 
         System.out.println("Nome: " + nomePet + " / Espécie: " + especiePet + " / Peso: " + pesoPet + " / Porte: " + portePet);
     }

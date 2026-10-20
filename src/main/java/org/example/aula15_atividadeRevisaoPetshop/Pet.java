@@ -6,13 +6,13 @@ public class Pet {
     private double peso;
     private String porte;
 
-    public String verificaPorteDoPet(){
+    public void verificaPorteDoPet(){
         if (this.getPeso() < 10) {
-            return "Pequeno";
+            porte = "Pequeno";
         } else if (this.getPeso() >= 10 && this.getPeso() < 25) {
-            return "Médio";
+            porte = "Médio";
         } else{
-            return "Grande";
+            porte = "Grande";
         }
     }
 
@@ -45,6 +45,7 @@ public class Pet {
     }
 
     public String getPorte() {
+        verificaPorteDoPet();
         return porte;
     }
 

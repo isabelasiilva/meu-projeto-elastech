@@ -1,4 +1,4 @@
-package org.example.aula15_atividadeRevisaoPetshop;
+package org.example.aula15_atividadeRevisaoPetshop.servicos;
 
 public class Tosa implements Servico{
     @Override

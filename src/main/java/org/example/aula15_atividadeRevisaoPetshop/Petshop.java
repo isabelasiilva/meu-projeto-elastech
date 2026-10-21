@@ -5,37 +5,28 @@ import org.example.aula15_atividadeRevisaoPetshop.servicos.*;
 import java.util.*;
 
 public class Petshop {
-
-    private int contador = 0;
-
     private Scanner ler;
     private CadastroPet cadastroPet;
 
     private ArrayList<Pet> listaPets = new ArrayList<>();
-
-
-    private HashSet<String> listaEspecies =  new HashSet<>();
-
+//    private HashSet<String> listaEspecies =  new HashSet<>();
 
     public Petshop(Scanner ler) {
-        this.ler = new Scanner(System.in);
+        this.ler = ler;
         this.cadastroPet = new CadastroPet(ler);
     }
 
     void cadastrarPet() {
         Pet novoPet = cadastroPet.cadastrarFichaPet();
         listaPets.add(novoPet);
-        imprimirFichaDoPet(listaPets.size() - 1);
-        setContador();
+        imprimirFichaDoPet(novoPet);
     }
 
-    void imprimirFichaDoPet(int posicao) {
-        String nomePet = listaPets.get(posicao).getNome();
-        String especiePet = listaPets.get(posicao).getEspecie();
-        double pesoPet = listaPets.get(posicao).getPeso();
-        String portePet = listaPets.get(posicao).getPorte();
-
-        System.out.println("Nome: " + nomePet + " / Espécie: " + especiePet + " / Peso: " + pesoPet + " / Porte: " + portePet);
+    void imprimirFichaDoPet(Pet pet) {
+        System.out.print("Nome: " + pet.getNome());
+        System.out.print(" / Espécie: " + pet.getEspecie());
+        System.out.print(" / Peso: " + pet.getPeso());
+        System.out.println(" / Porte: " + pet.getPorte());
     }
 
     void imprimirPetsCadastrados(){
@@ -63,11 +54,17 @@ public class Petshop {
     }
 
     void verEspeciesCadastradas() {
-            for (Pet especiePet : listaPets) {
-                listaEspecies.add(especiePet.getEspecie().toUpperCase());
-            }
-            System.out.println(listaEspecies);
-            System.out.println("Total de espécies diferentes: " + listaEspecies.size());
+//            for (Pet especiePet : listaPets) {
+//                listaEspecies.add(especiePet.getEspecie().toUpperCase());
+//            }
+//            System.out.println(listaEspecies);
+//            System.out.println("Total de espécies diferentes: " + listaEspecies.size());
+        Set<String> especies = new HashSet<>();
+        for (Pet pet : listaPets) {
+            especies.add(pet.getEspecie().toUpperCase());
+        }
+        System.out.println(especies);
+        System.out.println("Total de espécies diferentes: " + especies.size());
     }
 
     void mostrarQuantosPetsCadastrados(){
@@ -77,28 +74,15 @@ public class Petshop {
     void mostrarPortePetsCadastrados(){
             System.out.println("Escolha o porte pequeno, médio ou grande");
             String opcaoPorte = ler.nextLine();
+            boolean encontrou = false;
             for (Pet pet : listaPets) {
                 if (pet.getPorte().equalsIgnoreCase(opcaoPorte)) {
                     System.out.println(pet.getNome());
-                } else {
-                    System.out.println("Não encontrado!");
+                    encontrou = true;
                 }
             }
-    }
-
-    public int getContador() {
-        return contador;
-    }
-
-    public void setContador() {
-        this.contador++;
-    }
-
-    public ArrayList<Pet> getListaPets() {
-        return listaPets;
-    }
-
-    public void setListaPets(ArrayList<Pet> listaPets) {
-        this.listaPets = listaPets;
+            if (!encontrou) {
+                System.out.println("Não encontrado!");
+            }
     }
 }

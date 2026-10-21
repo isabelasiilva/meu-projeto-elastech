@@ -48,8 +48,4 @@ public class Pet {
         verificaPorteDoPet();
         return porte;
     }
-
-    public void setPorte(String porte) {
-        this.porte = porte;
-    }
 }

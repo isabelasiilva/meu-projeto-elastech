@@ -19,7 +19,7 @@ public class Pizza {
     }
 
     void mostrar(){
-        System.out.println("Pizza de sabor " + this.sabor + " com a borda " + this.borda + " e com extra de queijo: " + this.temQueijo);
+        System.out.println("Pizza de sabor " + this.sabor + " com a borda de " + this.borda + " e com extra de queijo: " + this.temQueijo);
     }
 
     public static class Builder{

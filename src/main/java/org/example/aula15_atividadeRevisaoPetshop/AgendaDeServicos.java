@@ -19,7 +19,11 @@ public class AgendaDeServicos {
     private ArrayList<Servico> servicos = new ArrayList<>();
 
     public AgendaDeServicos(Scanner ler) {
-        this.ler = new Scanner(System.in);
+        this.ler = ler;
+        servicos.add(darBanhoEmPet);
+        servicos.add(tosarPet);
+        servicos.add(consultaPet);
+        servicos.add(vacinarPet);
     }
 
     void entrarNaFilaDoBanho(){
@@ -41,11 +45,6 @@ public class AgendaDeServicos {
     }
 
     void executarServico(){
-        servicos.add(darBanhoEmPet);
-        servicos.add(tosarPet);
-        servicos.add(consultaPet);
-        servicos.add(vacinarPet);
-
         System.out.println("Qual o nome do pet? ");
         String nome = ler.nextLine();
 

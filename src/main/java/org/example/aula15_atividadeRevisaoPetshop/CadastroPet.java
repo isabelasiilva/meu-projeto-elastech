@@ -9,18 +9,17 @@ import java.util.Scanner;
 public class CadastroPet {
     private Scanner ler;
 
-    Pet novoPet = new Pet();
-    Pet cachorro = new Cachorro();
-    Pet gato = new Gato();
-    String nome;
-    String especie;
-    boolean pesoValido = false;
+    private boolean pesoValido = false;
+    private String especie;
 
     public CadastroPet(Scanner ler) {
         this.ler = ler;
     }
 
     Pet cadastrarFichaPet() {
+        Pet novoPet = new Pet();
+        String nome;
+
         System.out.println("Cadastrando Ficha de Pet");
 
         // Valida nome
@@ -35,24 +34,18 @@ public class CadastroPet {
 
         // Valida espécie
         do {
-            System.out.println("Digite a especie:");
-            especie = ler.nextLine().trim();
-            if (especie.isEmpty()) {
-                System.out.println("Erro: a especie não pode estar vazia.");
-            }
-            novoPet.setEspecie(especie);
+            validaEspecie(novoPet);
         } while (especie.isEmpty());
 
         // Valida peso
-
         while (!pesoValido) {
-            validaPeso();
+            validaPeso(novoPet);
         }
 
-        return validaEspecie();
+        return novoPet;
     }
 
-    private void validaPeso() {
+    private void validaPeso(Pet petCriado) {
         double peso;
         System.out.println("Digite o peso:");
         try {
@@ -62,7 +55,7 @@ public class CadastroPet {
             if (peso <= 0) {
                 System.out.println("Erro: o peso deve ser maior que zero.");
             } else {
-                novoPet.setPeso(peso);
+                petCriado.setPeso(peso);
                 pesoValido = true;
             }
         } catch (InputMismatchException ime) {
@@ -71,22 +64,32 @@ public class CadastroPet {
         }
     }
 
-    private Pet validaEspecie() {
-        if (novoPet.getEspecie().equalsIgnoreCase("cachorro")) {
-            cachorro.setNome(novoPet.getNome());
-            cachorro.setEspecie(novoPet.getEspecie());
-            cachorro.setPeso(novoPet.getPeso());
-            System.out.println("Foi cadastrado um cachorro com sucesso!");
+    private Pet validaEspecie(Pet petCriado) {
+        Pet cachorro = new Cachorro();
+        Pet gato = new Gato();
+
+        System.out.println("Digite a especie:");
+        especie = ler.nextLine().trim();
+        if (especie.isEmpty()) {
+            System.out.println("Erro: a especie não pode estar vazia.");
+        }
+        petCriado.setEspecie(especie);
+
+        if (petCriado.getEspecie().equalsIgnoreCase("cachorro")) {
+            cachorro.setNome(petCriado.getNome());
+            cachorro.setEspecie(petCriado.getEspecie());
+            cachorro.setPeso(petCriado.getPeso());
+//            System.out.println("Inserindo um cachorro com sucesso!");
             return cachorro;
-        } else if (novoPet.getEspecie().equalsIgnoreCase("gato")) {
-            gato.setNome(novoPet.getNome());
-            gato.setEspecie(novoPet.getEspecie());
-            gato.setPeso(novoPet.getPeso());
-            System.out.println("Foi cadastrado um gato com sucesso!");
+        } else if (petCriado.getEspecie().equalsIgnoreCase("gato")) {
+            gato.setNome(petCriado.getNome());
+            gato.setEspecie(petCriado.getEspecie());
+            gato.setPeso(petCriado.getPeso());
+//            System.out.println("Foi cadastrado um gato com sucesso!");
             return gato;
         }else {
-            System.out.println("Foi cadastrado com sucesso!");
-            return novoPet;
+//            System.out.println("Foi cadastrado com sucesso!");
+            return petCriado;
         }
     }
 }

@@ -1,4 +1,6 @@
-package org.example.aula15_atividadeRevisaoPetshop;
+package org.example.aula15_atividadeRevisaoPetshop.pets;
+
+import org.example.aula15_atividadeRevisaoPetshop.Pet;
 
 public class Cachorro extends Pet {
     @Override

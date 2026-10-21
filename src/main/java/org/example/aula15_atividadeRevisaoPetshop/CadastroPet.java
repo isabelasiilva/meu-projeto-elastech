@@ -1,5 +1,8 @@
 package org.example.aula15_atividadeRevisaoPetshop;
 
+import org.example.aula15_atividadeRevisaoPetshop.pets.Cachorro;
+import org.example.aula15_atividadeRevisaoPetshop.pets.Gato;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class CadastroPet {
     private Scanner ler;
 
-
     Pet novoPet = new Pet();
     Pet cachorro = new Cachorro();
     Pet gato = new Gato();
@@ -50,7 +49,6 @@ public class CadastroPet {
         return validaEspecie();
     }
 
-
     private void validaPeso() {
         double peso;
         System.out.println("Digite o peso:");
@@ -88,5 +86,4 @@ public class CadastroPet {
             return novoPet;
         }
     }
-
 }

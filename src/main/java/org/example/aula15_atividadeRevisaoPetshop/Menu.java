@@ -5,9 +5,11 @@ import java.util.Scanner;
 public class Menu {
     private Scanner ler = new Scanner(System.in);
     private Petshop petshop;
+    private AgendaDeServicos agendaDeServicos;
 
     public Menu() {
         this.petshop = new Petshop(ler);
+        this.agendaDeServicos = new AgendaDeServicos(ler);
     }
 
     public void mostrarMenu() {
@@ -51,13 +53,13 @@ public class Menu {
                         petshop.verEspeciesCadastradas();
                         break;
                     case 5:
-                        petshop.entrarNaFilaDoBanho();
+                        agendaDeServicos.entrarNaFilaDoBanho();
                         break;
                     case 6:
-                        petshop.atenderProximoDaFila();
+                        agendaDeServicos.atenderProximoDaFila();
                         break;
                     case 7:
-                        petshop.executarServico();
+                        agendaDeServicos.executarServico();
                         break;
                     case 8:
                         petshop.mostrarQuantosPetsCadastrados();
@@ -66,7 +68,7 @@ public class Menu {
                         petshop.mostrarPortePetsCadastrados();
                         break;
                     case 10:
-                        petshop.atenderTodosFilaDoBanho();
+                        agendaDeServicos.atenderTodosFilaDoBanho();
                         break;
                     default:
                         System.out.println("Opção invalida. Escolha entre 0 e 10.");

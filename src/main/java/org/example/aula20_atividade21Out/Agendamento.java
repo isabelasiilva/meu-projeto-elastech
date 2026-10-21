@@ -1,8 +1,10 @@
 package org.example.aula20_atividade21Out;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+@Builder
 @Getter
 @Setter
 public class Agendamento {
@@ -15,26 +17,25 @@ public class Agendamento {
     private String observacao;
     private double desconto;
 
+    // Construtor
+//    public Agendamento(String nomePet, String servico, String horario, boolean perfume, boolean laco, boolean hidratacao, String observacao, double desconto) {
+//        this.nomePet = nomePet;
+//        this.servico = servico;
+//        this.horario = horario;
+//        this.perfume = perfume;
+//        this.laco = laco;
+//        this.hidratacao = hidratacao;
+//        this.observacao = observacao;
+//        this.desconto = desconto;
+//    }
 
-    public Agendamento(String nomePet, String servico, String horario, boolean perfume, boolean laco, boolean hidratacao, String observacao, double desconto) {
-        this.nomePet = nomePet;
-        this.servico = servico;
-        this.horario = horario;
-        this.perfume = perfume;
-        this.laco = laco;
-        this.hidratacao = hidratacao;
-        this.observacao = observacao;
-        this.desconto = desconto;
-    }
+    // Builder
+//    private Agendamento(Builder builder) {
+//        this.nomePet = builder.nomePet;
+//        this.servico = builder.servico;
+//    }
 
     void mostrar(){
-        System.out.println("Nome: " + nomePet);
-        System.out.println("Servico: " + servico);
-        System.out.println("Horario: " + horario);
-        System.out.println("Perfume: " + perfume);
-        System.out.println("Laco: " + laco);
-        System.out.println("Hidratacao: " + hidratacao);
-        System.out.println("Observacao: " + observacao);
-        System.out.println("Desconto: " + desconto);
+        System.out.printf("Agendamento: %s , %s , %s , %b , %b , %b, %s , %.0f \n", nomePet, servico, horario, perfume, laco, hidratacao, observacao, desconto);
     }
 }

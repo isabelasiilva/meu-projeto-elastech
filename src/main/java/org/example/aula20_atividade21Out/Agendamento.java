@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Builder
-@Getter
-@Setter
 public class Agendamento {
     private String nomePet;
     private String servico;
@@ -17,7 +15,7 @@ public class Agendamento {
     private String observacao;
     private double desconto;
 
-    // Construtor
+//      Construtor
 //    public Agendamento(String nomePet, String servico, String horario, boolean perfume, boolean laco, boolean hidratacao, String observacao, double desconto) {
 //        this.nomePet = nomePet;
 //        this.servico = servico;
@@ -27,12 +25,6 @@ public class Agendamento {
 //        this.hidratacao = hidratacao;
 //        this.observacao = observacao;
 //        this.desconto = desconto;
-//    }
-
-    // Builder
-//    private Agendamento(Builder builder) {
-//        this.nomePet = builder.nomePet;
-//        this.servico = builder.servico;
 //    }
 
     void mostrar(){

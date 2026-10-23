@@ -1,0 +1,19 @@
+1) Qual problema o Factory resolve? O que aconteceria se os ifs que decidem qual objeto criar ficassem espalhados pelo main e por outras partes do programa, e depois surgisse um tipo novo?
+        O Factory centraliza a instanciação dos objetos do projeto em um lugar só. Se não fosse assim, precisaríamos olhar o código todo quando houvesse alguma alteração para fazer
+
+2) O método da fábrica normalmente devolve o objeto criado com qual tipo?
+        Devolve o tipo da classe concreta (ex: Cachorro)
+
+4) Seu sistema precisa usar uma classe de pagamento de outra empresa, mas ela não implementa a sua interface.   Por que não dá para simplesmente escrever implements na classe dela? O que você faz no lugar?
+        Na teoria se implementássemos nossa interface na classe do projeto externo resolveria, mas geralmente não temos acesso ao código fonte do projeto externo. E fazer isso seria uma violação de encapsulamento porque o código de terceiros evolui de forma independente. Modificá-lo diretamente quebraria a premissa de baixo acoplamento. No lugar fazemos o uso do padrão estrutural adapter, que funciona como intermediário entre a classe externa e nosso projeto
+
+5) Em um Adapter, onde fica a tradução (por exemplo, a conversão de dólar para real)?
+        No método implementado da interface, dentro do adapter
+
+7) Explique com suas palavras qual problema o Facade resolve. Se quiser, use o exemplo do síndico do condomínio ou crie outro.
+        O facade reune vários métodos que são chamados juntos e na mesma sequência em uma classe própria para isso. Exemplo um projeto que descreve uma rotina pela manhã, temos a classe Despertador, com o método desligar(), temos a classe Cafeteira, com o método fazerCafe() e a classe Chuveiro com o método ligar(). Esses 3 métodos são instanciados e chamados todos na mesma ordem, então como é uma tarefa que exige um "ritual" de chamar vários objetos diferentes numa sequência obrigatória, escondemos esse ritual dentro de uma classe ManhaFacade para organizar seu Main.
+
+8) Marque V (verdadeiro) ou F (falso):
+( F ) A facade precisa implementar uma interface.
+( V ) A facade guarda as classes envolvidas no processo em atributos.
+( F ) Depois que a fachada existe, é proibido usar as outras classes diretamente.

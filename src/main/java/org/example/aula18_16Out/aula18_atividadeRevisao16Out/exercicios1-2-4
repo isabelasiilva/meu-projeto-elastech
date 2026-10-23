@@ -1,0 +1,20 @@
+Abstração, SOLID e modificadores de acesso
+
+1-A) Explique, com suas palavras, o que é abstração em programação orientada a objetos.
+        Por meio da abstração não precisamos saber a lógica complexa por traz de uma implementação de código. Nos permite ver e usar apenas o essencial para nosso sistema funcionar, deixando o código mais simples. Focamos no O QUE um objeto faz e como COMO ele faz.
+
+1-B) Qual a diferença entre abstração e encapsulamento?
+        A abstração é simplificar o uso e mostrar/ usar apenas o importante. O encapsulamento por sua vez é responsável por controlar o acesso, esconder e proteger detalhes internos de um objeto, garantindo integridade de funções e informações. Aplicamos o encapsulamento usando modificadores de acesso, getters e setters.
+
+1-C) Quando você usa lista.add("Ana"), você sabe como o Java guarda esse elemento na memória? Por que isso é um exemplo de abstração?
+        Não sabemos como lista.add("Ana") guarda o elemento na memória, e isso é um exemplo de abstração porque usamos o método para um fim sem precisar saber como ele foi construído e qual a lógica usada. Conhecemos o método, não sabemos como é o código, mas sabemos que o uso irá funcionar na nossa instancia. Uma analogia a comprarmos um bolo, não sabemos a receita, mas temos o bolo pronto.
+
+2-
+        A) Single Responsibility-Principle
+        B) Interface Segregation Principle
+        C) Dependency Inversion Principle
+
+4)  O modificador de acesso private é limitado a apenas dentro da própria classe.
+    O modificador default (sem nada) permite ser acessado para todos que estão dentro do mesmo pacote.
+    O modificador protected permite acesso dentro do mesmo pacote e acesso pelas classes filhas de pacotes externos.
+    O modificador public permite acesso total

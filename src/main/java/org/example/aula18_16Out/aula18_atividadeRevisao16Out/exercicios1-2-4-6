@@ -18,3 +18,11 @@ Abstração, SOLID e modificadores de acesso
     O modificador default (sem nada) permite ser acessado para todos que estão dentro do mesmo pacote.
     O modificador protected permite acesso dentro do mesmo pacote e acesso pelas classes filhas de pacotes externos.
     O modificador public permite acesso total
+
+6)Foi usado no exercício integrado :
+    Encapsulamento: para controle de acesso dos objetos, uso de modificadores de acesso, getters e setters
+    Abstração: a classe Funcionario é definida como um modelo genérico. Abstração do método calcularSalario(), que delega para suas subclasses a responsabilidade de como ela será.
+    Herança: as classes Desenvolvedor e Gerente herdam os atributos e métodos comuns da classe mãe Funcionario.
+    Polimorfismo:
+        - cada subclasse implementa o método calcularSalario() com sua própria regra de negócio (bônus de 20% para Desenvolvedor e 50% para Gerente).
+        - NotificadorEmail e NotificadorSms implementam o mesmo método notificar(), mas cada uma executa uma ação diferente para enviar a mensagem.

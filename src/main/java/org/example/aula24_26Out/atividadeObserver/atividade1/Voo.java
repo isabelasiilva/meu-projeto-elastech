@@ -1,4 +1,4 @@
-package org.example.aula24_26Out.atividadeObserver;
+package org.example.aula24_26Out.atividadeObserver.atividade1;
 
 import java.util.ArrayList;
 

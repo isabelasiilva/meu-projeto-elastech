@@ -1,0 +1,9 @@
+1 - Qual problema o padrão Observer resolve? Dê um exemplo do dia a dia que funcione como ele.
+        Um exemplo do dia a dia que o Observer resolve é recebermos notificação quando um item que demonstramos interesse em comprar volta para o estoque.
+
+2 - No Observer, o que é o Subject e o que é o Observer? Como o Subject avisa os observadores sem conhecer as classes concretas deles?
+        Subject é quem guarda a lista de interessados, a qual disparará o alerta quando seu estado mudar, quem gerencia os interessados e avisa quando o status mudar. Observer é quem será notificado.
+        O subject avisa os observer da lista usando um for na lista avisando todo mundo, por isso não conhece suas classes concretas.
+
+3 - Se você precisar adicionar um novo interessado, por exemplo um Entregador que também precisa saber quando o pedido muda de status, o que é preciso alterar na classe Pedido? Por quê?
+        Não mudamos o Pedido, considerando que ele contenha o método notificar() e o método de adicionarObservador(). Só precisaríamos que o objeto da classe Entregador fosse adicionado na lista do adicionarObservador() de Pedido.

@@ -11,5 +11,10 @@ public class Main {
         voo1.adicionarObservador(pass2);
 
         voo1.mudarStatus("Embarque iniciado");
+
+        PainelAeroporto painel1 = new PainelAeroporto();
+        voo1.adicionarObservador(painel1);
+
+        voo1.mudarStatus("Atrasado");
     }
 }

@@ -1,0 +1,15 @@
+1. O que o padrão Singleton garante?
+        b) Que exista apenas um objeto da classe no programa
+
+2. Por que o construtor de um Singleton é private?
+        Para que possamos acessá-lo com um getter e nesse getter verificamos se a variavel da sua instancia está vazia. Se estiver vazia, criamos uma instancia da classe e atribuimos à variável. Se não estiver vazia, retornamos a própria variável que já possui a unica instancia salva dentro.
+
+3. Complete a lacuna:
+        private static Configuracao instancia
+
+4. O que acontece se alguém tentar escrever isto fora da classe: ´Configuracao c = new Configuracao();´ ?
+        Dá um erro e não conseguirá criar uma nova instancia da classe, é necessário fazer uso do getter, que irá fazer a verificação da variável.
+
+5. Qual é a forma correta de obter o objeto de um Singleton chamado Configuracao?
+        b) Configuracao.getInstancia()
+

@@ -1,0 +1,29 @@
+Nível 1:
+1 - Crie uma interface Saudacao com um metodo void executar().
+Depois, em uma classe com main, crie uma variável desse tipo usando lambda e chame o metodo. O corpo da lambda deve imprimir "oi".
+
+
+2 - Interface Impressora com void imprimir(String texto).
+Crie duas variáveis diferentes desse tipo usando duas lambdas — uma que imprime o texto em maiúsculo, outra que imprime em minúsculo. Chame as duas.
+
+
+3 - Interface Calculo com int calcular(int a, int b).
+Crie três lambdas: soma, multiplicação e a que retorna o maior dos dois. Chame as três e imprima os resultados.
+
+
+4 - Antes eu guardava a ação e chamava. Agora eu entrego a ação e deixo o metodo decidir o que fazer com ela.
+
+Interface Acao com void executar().
+Crie um metodo static void repetir(Acao acao) que chama acao.executar() duas vezes.
+No main, chame repetir passando uma lambda que imprime "oi".
+Repare que você não cria variável, a lambda vai direto como argumento.
+
+
+5 - Interface Operacao com int aplicar(int n).
+Crie um metodo static void mostrarResultado(Operacao op, int valor) que imprime o retorno de op.aplicar(valor).
+No main, chame mostrarResultado três vezes com três lambdas diferentes: dobro, quadrado e negativo.
+Aqui você vê lambda com retorno entrando por parâmetro — as duas coisas juntas.
+
+6 - Interface Condicao com boolean testar(int n).
+Crie um metodo static void executarSe(Condicao cond, int valor, Acao acao) — se cond.testar(valor) for true, chama acao.executar().
+No main, chame passando: uma condição “é par”, o valor 4, e uma ação que imprime "é par!". Depois chame de novo com valor 7 e veja que nada acontece.

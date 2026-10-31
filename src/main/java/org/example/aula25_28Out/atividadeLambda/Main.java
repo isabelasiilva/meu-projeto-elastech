@@ -31,9 +31,45 @@ public class Main {
         System.out.println(multplicacao.calcular(3, 4));
         System.out.println(oMaior.calcular(7, 4));
 
-
         System.out.println("----Exercicio 4----");
+        Acao acaoTeste = () -> {System.out.println("Oi");};
+//        acaoTeste.executar();
+//        repetir(acaoTeste);
+        // ou
+         repetir(() -> {System.out.println("Oi");});
 
+        System.out.println("----Exercicio 5----");
+        Operacao dobro = (n) -> n*2;
+        Operacao quadrado = (n) -> n*n;
+        Operacao negativo = (n) -> n*(-1);
 
+        mostrarResultado(dobro, 3);
+        mostrarResultado(quadrado, 3);
+        mostrarResultado(negativo, 3);
+
+        System.out.println("----Exercicio 6----");
+        Condicao condicao1 = (n) -> true;
+        Condicao condicao2 = (n) -> false;
+
+        executarSe(condicao1, 5, acaoTeste);
+        executarSe(condicao2, 3, acaoTeste);
+    }
+
+    // Exercicio 4
+    public static void repetir(Acao acao) {
+        acao.executar();
+        acao.executar();
+    }
+
+    // Exercicio 5
+    static void mostrarResultado(Operacao op, int valor){
+        System.out.println(op.aplicar(valor));
+    }
+
+    // Exercicio 6
+    static void executarSe(Condicao cond, int valor, Acao acao){
+        if(cond.testar(valor)){
+            acao.executar();
+        }
     }
 }

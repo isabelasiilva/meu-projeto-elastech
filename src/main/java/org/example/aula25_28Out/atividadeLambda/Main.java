@@ -20,11 +20,7 @@ public class Main {
         Calculo soma = (a, b) -> a + b;
         Calculo multplicacao = (a, b) -> a * b;
         Calculo oMaior = (a, b) -> {
-            if (a > b) {
-                return a;
-            } else {
-                return b;
-            }
+            return Math.max(a, b);
         };
 
         System.out.println(soma.calcular(5, 4));

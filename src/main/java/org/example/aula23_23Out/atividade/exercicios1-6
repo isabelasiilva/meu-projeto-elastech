@@ -1,0 +1,24 @@
+1.(Cenário Real) A equipe mexeu na classe CalculadoraFrete para adicionar entrega por Drone, mas sem querer estragou o cálculo antigo do Sedex. Qual é a principal vantagem de ter Testes Unitários nesse momento?
+    B) O teste apita Vermelho imediatamente na máquina da programadora antes de o bug ir para o cliente (evitando regressão).
+
+2. Olhando para a Pirâmide de Testes, por que os Testes Unitários ficam na base (representando cerca de 70% dos testes de uma empresa)?
+    C) Porque eles testam pequenas partes isoladas do código, rodando em milissegundos e sendo muito mais baratos e fáceis de manter.
+
+3. No JUnit 5, nós organizamos nosso método de teste seguindo o padrão AAA (Arrange, Act, Assert). O que fazemos na etapa "Assert"?
+    B) Usamos os comandos do JUnit (como assertEquals ou assertTrue) para verificar se o resultado obtido bateu com o esperado.
+
+4. Qual comando do JUnit 5 você deve usar para garantir que o método conta.sacar(-50.0) bloqueia a operação lançando uma exceção (IllegalArgumentException)?
+    D) assertThrows(IllegalArgumentException.class, () -> conta.sacar(-50.0));
+
+5. No TDD (Test-Driven Development), trabalhamos no ciclo Red ➡️ Green ➡️ Refactor. O que significa a etapa "GREEN" (Verde)?
+    B) Escrever o código mais simples e direto possível na classe principal apenas para fazer o teste passar e ficar verde.
+
+6. Responda:
+Por que testar o sistema apenas dando System.out.println() dentro do método main ("teste no olho") não funciona quando o projeto cresce na empresa?
+    Porque o sistema da empresa cresce e a demanda de testar manualmente depende inteiramente da ação humana e  não escala com a complexidade do dele.
+
+Detetive de Código: Uma colega escreveu um método de teste perfeito com assertEquals, clicou para rodar a classe de teste, mas o JUnit ignorou o método dela completamente! Qual anotação ela esqueceu de colocar em cima do método?
+    Ela esqueceu de indicar o @Test para ser reconhecido e executado como um método de teste.
+
+Refatoração sem medo: No ciclo do TDD, por que a gente só faz o Refactor (deixar o código bonito e limpo) depois que o teste já ficou Verde?
+    Porque primeiro precisamos garantir que o código funciona corretamente antes de melhorar sua estrutura. Com o teste passando, temos uma segurança de que a funcionalidade está rodando, assim podemos melhorar o código sem correr o risco de modificar seu comportamento sem perceber.
